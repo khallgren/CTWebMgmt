@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="fcnProcessSyncDataUL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strTableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strWebConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnProcessSyncDataULResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnProcessSyncDataULResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnGenerateSyncDL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strSQL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strTableName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strWebConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnGenerateSyncDLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnGenerateSyncDLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnProcessSyncResults">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strTableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strWebConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnProcessSyncResultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnProcessSyncResultsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnProcessDataULBlindCommit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strTableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strWebConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnProcessDataULBlindCommitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnProcessDataULBlindCommitResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUpdateLocalID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngRecordWebID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="_lngRecordID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strWebConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUpdateLocalIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnUpdateLocalIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="fcnProcessSyncDataULSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnProcessSyncDataUL" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessSyncDataULSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnProcessSyncDataULResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnGenerateSyncDLSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnGenerateSyncDL" />
+  </wsdl:message>
+  <wsdl:message name="fcnGenerateSyncDLSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnGenerateSyncDLResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessSyncResultsSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnProcessSyncResults" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessSyncResultsSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnProcessSyncResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessDataULBlindCommitSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnProcessDataULBlindCommit" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessDataULBlindCommitSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnProcessDataULBlindCommitResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateLocalIDSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnUpdateLocalID" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateLocalIDSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnUpdateLocalIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="xfereventinfov2Soap">
+    <wsdl:operation name="fcnProcessSyncDataUL">
+      <wsdl:input message="tns:fcnProcessSyncDataULSoapIn" />
+      <wsdl:output message="tns:fcnProcessSyncDataULSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGenerateSyncDL">
+      <wsdl:input message="tns:fcnGenerateSyncDLSoapIn" />
+      <wsdl:output message="tns:fcnGenerateSyncDLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessSyncResults">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">After a file has been generated on the server and downloaded to the client the results are processed</wsdl:documentation>
+      <wsdl:input message="tns:fcnProcessSyncResultsSoapIn" />
+      <wsdl:output message="tns:fcnProcessSyncResultsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessDataULBlindCommit">
+      <wsdl:input message="tns:fcnProcessDataULBlindCommitSoapIn" />
+      <wsdl:output message="tns:fcnProcessDataULBlindCommitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateLocalID">
+      <wsdl:input message="tns:fcnUpdateLocalIDSoapIn" />
+      <wsdl:output message="tns:fcnUpdateLocalIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="xfereventinfov2Soap" type="tns:xfereventinfov2Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="fcnProcessSyncDataUL">
+      <soap:operation soapAction="http://tempuri.org/fcnProcessSyncDataUL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGenerateSyncDL">
+      <soap:operation soapAction="http://tempuri.org/fcnGenerateSyncDL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessSyncResults">
+      <soap:operation soapAction="http://tempuri.org/fcnProcessSyncResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessDataULBlindCommit">
+      <soap:operation soapAction="http://tempuri.org/fcnProcessDataULBlindCommit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateLocalID">
+      <soap:operation soapAction="http://tempuri.org/fcnUpdateLocalID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="xfereventinfov2Soap12" type="tns:xfereventinfov2Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="fcnProcessSyncDataUL">
+      <soap12:operation soapAction="http://tempuri.org/fcnProcessSyncDataUL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGenerateSyncDL">
+      <soap12:operation soapAction="http://tempuri.org/fcnGenerateSyncDL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessSyncResults">
+      <soap12:operation soapAction="http://tempuri.org/fcnProcessSyncResults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessDataULBlindCommit">
+      <soap12:operation soapAction="http://tempuri.org/fcnProcessDataULBlindCommit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateLocalID">
+      <soap12:operation soapAction="http://tempuri.org/fcnUpdateLocalID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="xfereventinfov2">
+    <wsdl:port name="xfereventinfov2Soap" binding="tns:xfereventinfov2Soap">
+      <soap:address location="https://www.camptrak.com/xfereventinfov2/xfereventinfov2.asmx" />
+    </wsdl:port>
+    <wsdl:port name="xfereventinfov2Soap12" binding="tns:xfereventinfov2Soap12">
+      <soap12:address location="https://www.camptrak.com/xfereventinfov2/xfereventinfov2.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

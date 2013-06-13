@@ -1,0 +1,1249 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2FEE5A20-1E80-4078-B3A6-33A1E63D062E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CTWebMgmt</RootNamespace>
+    <AssemblyName>CTWebMgmt</AssemblyName>
+    <StartupObject>CTWebMgmt.CTWebMgmt</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <ManifestCertificateThumbprint>91F9257800C37D13DB0CC86F600BAC4FBB318E0E</ManifestCertificateThumbprint>
+    <ManifestKeyFile>CTWebMgmt_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>ftp://ftp.camptrak.com/camptrak.com/CTWebInstall/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://www.camptrak.com/ctwebinstall/</InstallUrl>
+    <MinimumRequiredVersion>1.3.1.48</MinimumRequiredVersion>
+    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationVersion>1.3.3.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="DotNetOpenAuth, Version=4.0.0.11165, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\DotNetOpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.2.4737.25316, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Authentication.OAuth2, Version=1.2.4737.25313, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Google.Apis.Authentication.OAuth2.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Calendar.v3, Version=1.2.4737.25287, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Google.Apis.Calendar.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Net35, Version=4.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Newtonsoft.Json.Net35.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xceed.SmartUI, Version=3.4.7113.3050, Culture=neutral, PublicKeyToken=ba83ff368b7563c6" />
+    <Reference Include="Xceed.SmartUI.Controls, Version=3.4.7113.3050, Culture=neutral, PublicKeyToken=ba83ff368b7563c6" />
+    <Reference Include="Xceed.SmartUI.UIStyle, Version=3.4.7113.3050, Culture=neutral, PublicKeyToken=ba83ff368b7563c6" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\frmAddCustomFieldDefReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmAddCustomFieldDefReg.Designer.cs">
+      <DependentUpon>frmAddCustomFieldDefReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmEditCustomFieldDefReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmEditCustomFieldDefReg.Designer.cs">
+      <DependentUpon>frmEditCustomFieldDefReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CustomGiftFields\frmCustomGiftLookupOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\CustomGiftFields\frmCustomGiftLookupOptions.Designer.cs">
+      <DependentUpon>frmCustomGiftLookupOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CustomGiftFields\frmEditCustomGiftField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\CustomGiftFields\frmEditCustomGiftField.Designer.cs">
+      <DependentUpon>frmEditCustomGiftField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CustomGiftFields\frmAddCustomGiftField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\CustomGiftFields\frmAddCustomGiftField.Designer.cs">
+      <DependentUpon>frmAddCustomGiftField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmAddCustomFieldDefIR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmAddCustomFieldDefIR.Designer.cs">
+      <DependentUpon>frmAddCustomFieldDefIR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmEditCustomFieldDefIR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmEditCustomFieldDefIR.Designer.cs">
+      <DependentUpon>frmEditCustomFieldDefIR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmOAuth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmOAuth.Designer.cs">
+      <DependentUpon>frmOAuth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Reports\frmReconcileMerchantGateway.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Reports\frmReconcileMerchantGateway.Designer.cs">
+      <DependentUpon>frmReconcileMerchantGateway.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Reports\frmReconcileMerchantGatewaySetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Reports\frmReconcileMerchantGatewaySetup.Designer.cs">
+      <DependentUpon>frmReconcileMerchantGatewaySetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Reports\frmReconileMerchantGatewayInst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Reports\frmReconileMerchantGatewayInst.Designer.cs">
+      <DependentUpon>frmReconileMerchantGatewayInst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Reports\rptReconcileMerchantGateway.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReconcileMerchantGateway.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="clsUtil.cs" />
+    <Compile Include="ContactInfo\AddressStandardization\clsCertRes.cs" />
+    <Compile Include="Admin\frmGoogleCalULOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmGoogleCalULOptions.Designer.cs">
+      <DependentUpon>frmGoogleCalULOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmSyncCustomFlags.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmSyncCustomFlags.Designer.cs">
+      <DependentUpon>frmSyncCustomFlags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmTestPassphrase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmTestPassphrase.Designer.cs">
+      <DependentUpon>frmTestPassphrase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmTestWebService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmTestWebService.Designer.cs">
+      <DependentUpon>frmTestWebService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmTextMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmTextMessage.Designer.cs">
+      <DependentUpon>frmTextMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmUpdateLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmUpdateLog.Designer.cs">
+      <DependentUpon>frmUpdateLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clsAppSettings.cs" />
+    <Compile Include="clsCboItem.cs" />
+    <Compile Include="clsCboSources.cs" />
+    <Compile Include="clsEncryption.cs" />
+    <Compile Include="clsErr.cs" />
+    <Compile Include="clsGlobalEnum.cs" />
+    <Compile Include="clsIR.cs" />
+    <Compile Include="clsIRCRUD.cs" />
+    <Compile Include="clsLiveCharge.cs" />
+    <Compile Include="clsMain.cs" />
+    <Compile Include="clsNav.cs" />
+    <Compile Include="clsSQLUtil.cs" />
+    <Compile Include="clsWebTalk.cs" />
+    <Compile Include="ContactInfo\AddressStandardization\Reports\frmNCOASummaryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactInfo\AddressStandardization\Reports\frmNCOASummaryReport.Designer.cs">
+      <DependentUpon>frmNCOASummaryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactInfo\AddStdV2\frmAddStdV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactInfo\AddStdV2\frmAddStdV2.Designer.cs">
+      <DependentUpon>frmAddStdV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactInfo\AddStdV2\frmAddStdV2Results.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactInfo\AddStdV2\frmAddStdV2Results.Designer.cs">
+      <DependentUpon>frmAddStdV2Results.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactInfo\AddStdV2\frmMORNCOAAlerts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactInfo\AddStdV2\frmMORNCOAAlerts.Designer.cs">
+      <DependentUpon>frmMORNCOAAlerts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CTAnywhere\frmCTADashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CTAnywhere\frmCTADashboard.Designer.cs">
+      <DependentUpon>frmCTADashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Donor\clsDonorCRUD.cs" />
+    <Compile Include="Donor\frmDonorExpressDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Donor\frmDonorExpressDetails.designer.cs">
+      <DependentUpon>frmDonorExpressDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Donor\frmAddXCVault.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Donor\frmAddXCVault.Designer.cs">
+      <DependentUpon>frmAddXCVault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Donor\frmAutoGeneratePledgePmts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Donor\frmAutoGeneratePledgePmts.Designer.cs">
+      <DependentUpon>frmAutoGeneratePledgePmts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Donor\frmBatchDonorInvite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Donor\frmBatchDonorInvite.Designer.cs">
+      <DependentUpon>frmBatchDonorInvite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Donor\frmDLGifts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Donor\frmDLGifts.designer.cs">
+      <DependentUpon>frmDLGifts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Donor\frmEditPledgeBillingInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Donor\frmEditPledgeBillingInfo.Designer.cs">
+      <DependentUpon>frmEditPledgeBillingInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Donor\frmProcessGifts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Donor\frmProcessGifts.designer.cs">
+      <DependentUpon>frmProcessGifts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Donor\frmULGiftSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Donor\frmULGiftSettings.designer.cs">
+      <DependentUpon>frmULGiftSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Donor\frmULGivingHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Donor\frmULGivingHistory.Designer.cs">
+      <DependentUpon>frmULGivingHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Donor\frmWebGiftDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Donor\frmWebGiftDetails.designer.cs">
+      <DependentUpon>frmWebGiftDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Donor\Reports\frmDXDetailsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Donor\Reports\frmDXDetailsViewer.Designer.cs">
+      <DependentUpon>frmDXDetailsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Donor\Reports\frmWebGiftDetailsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Donor\Reports\frmWebGiftDetailsViewer.Designer.cs">
+      <DependentUpon>frmWebGiftDetailsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Donor\Reports\rptDXDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDXDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Donor\Reports\rptWebGiftDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptWebGiftDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Donor\Reports\srptDXDetails_CustomFields.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>srptDXDetails_CustomFields.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Admin\frmGoogleCal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmGoogleCal.Designer.cs">
+      <DependentUpon>frmGoogleCal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GGCC\frmCollectRefundAmt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GGCC\frmCollectRefundAmt.Designer.cs">
+      <DependentUpon>frmCollectRefundAmt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\frmCollectRefundAmt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\frmCollectRefundAmt.Designer.cs">
+      <DependentUpon>frmCollectRefundAmt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\frmSyncTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\frmSyncTrans.Designer.cs">
+      <DependentUpon>frmSyncTrans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\frmIndRegUL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\frmIndRegUL.Designer.cs">
+      <DependentUpon>frmIndRegUL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\frmProfileDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\frmProfileDetails.Designer.cs">
+      <DependentUpon>frmProfileDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\frmUseRegHold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\frmUseRegHold.Designer.cs">
+      <DependentUpon>frmUseRegHold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\Messaging\frmImgUL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\Messaging\frmImgUL.Designer.cs">
+      <DependentUpon>frmImgUL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\Reports\frmBatchWebCamperDetailSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\Reports\frmBatchWebCamperDetailSetup.Designer.cs">
+      <DependentUpon>frmBatchWebCamperDetailSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\Reports\frmTransDownloads.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\Reports\frmTransDownloads.Designer.cs">
+      <DependentUpon>frmTransDownloads.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\Reports\frmTransDownloadsSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\Reports\frmTransDownloadsSetup.Designer.cs">
+      <DependentUpon>frmTransDownloadsSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\Reports\frmWebCamperDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\Reports\frmWebCamperDetails.Designer.cs">
+      <DependentUpon>frmWebCamperDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\Reports\rptTransDownloads.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTransDownloads.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ind\Reports\rptWebCamperDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptWebCamperDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ind\Reports\srptWebCamperDetails_BlockChoices.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>srptWebCamperDetails_BlockChoices.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ind\Reports\srptWebCamperDetails_CustomFieldsCamper.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>srptWebCamperDetails_CustomFieldsCamper.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ind\Reports\srptWebCamperDetails_CustomFieldsProfile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>srptWebCamperDetails_CustomFieldsProfile.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ind\Reports\srptWebCamperDetails_CustomFieldsReg.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>srptWebCamperDetails_CustomFieldsReg.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ind\Setup\frmDiscounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\Setup\frmDiscounts.Designer.cs">
+      <DependentUpon>frmDiscounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\Setup\frmMinDep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\Setup\frmMinDep.Designer.cs">
+      <DependentUpon>frmMinDep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IRUtils\Dev.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IRUtils\Dev.Designer.cs">
+      <DependentUpon>Dev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IRUtils\frmAddIR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IRUtils\frmAddIR.designer.cs">
+      <DependentUpon>frmAddIR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IRUtils\frmFindIR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IRUtils\frmFindIR.designer.cs">
+      <DependentUpon>frmFindIR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmReferredBy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmReferredBy.Designer.cs">
+      <DependentUpon>frmReferredBy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSwitchboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSwitchboard.designer.cs">
+      <DependentUpon>frmSwitchboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmSystemSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmSystemSetup.designer.cs">
+      <DependentUpon>frmSystemSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GGCC\clsGGCCCRUD.cs" />
+    <Compile Include="GGCC\frmAddIRForGGCCWebReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GGCC\frmAddIRForGGCCWebReg.designer.cs">
+      <DependentUpon>frmAddIRForGGCCWebReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GGCC\frmDLEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GGCC\frmDLEvents.designer.cs">
+      <DependentUpon>frmDLEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GGCC\frmGGCCRegDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GGCC\frmGGCCRegDetails.designer.cs">
+      <DependentUpon>frmGGCCRegDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GGCC\frmPickMatchGGCCWebRegRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GGCC\frmPickMatchGGCCWebRegRecord.designer.cs">
+      <DependentUpon>frmPickMatchGGCCWebRegRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GGCC\frmProcessGGCCReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GGCC\frmProcessGGCCReg.designer.cs">
+      <DependentUpon>frmProcessGGCCReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GGCC\frmReconcileWebGGCCReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GGCC\frmReconcileWebGGCCReg.designer.cs">
+      <DependentUpon>frmReconcileWebGGCCReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GGCC\frmUploadEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GGCC\frmUploadEvents.designer.cs">
+      <DependentUpon>frmUploadEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\clsIndCRUD.cs" />
+    <Compile Include="Ind\frmDLIndReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\frmDLIndReg.Designer.cs">
+      <DependentUpon>frmDLIndReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\frmIndRegDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\frmIndRegDetails.Designer.cs">
+      <DependentUpon>frmIndRegDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\frmProcessIndReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\frmProcessIndReg.Designer.cs">
+      <DependentUpon>frmProcessIndReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ind\frmSpecialNeeds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ind\frmSpecialNeeds.Designer.cs">
+      <DependentUpon>frmSpecialNeeds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IRUtils\frmReconcileIR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IRUtils\frmReconcileIR.Designer.cs">
+      <DependentUpon>frmReconcileIR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactInfo\frmRecordInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactInfo\frmRecordInformation.Designer.cs">
+      <DependentUpon>frmRecordInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MORUtils\frmAddMOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MORUtils\frmAddMOR.Designer.cs">
+      <DependentUpon>frmAddMOR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MORUtils\frmFindMOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MORUtils\frmFindMOR.Designer.cs">
+      <DependentUpon>frmFindMOR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\frmAddCustomFieldDefReg.resx">
+      <DependentUpon>frmAddCustomFieldDefReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmEditCustomFieldDefReg.resx">
+      <DependentUpon>frmEditCustomFieldDefReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\CustomGiftFields\frmCustomGiftLookupOptions.resx">
+      <DependentUpon>frmCustomGiftLookupOptions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\CustomGiftFields\frmEditCustomGiftField.resx">
+      <DependentUpon>frmEditCustomGiftField.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\CustomGiftFields\frmAddCustomGiftField.resx">
+      <DependentUpon>frmAddCustomGiftField.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmAddCustomFieldDefIR.resx">
+      <DependentUpon>frmAddCustomFieldDefIR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmEditCustomFieldDefIR.resx">
+      <DependentUpon>frmEditCustomFieldDefIR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Reports\frmReconcileMerchantGateway.resx">
+      <DependentUpon>frmReconcileMerchantGateway.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Reports\frmReconcileMerchantGatewaySetup.resx">
+      <DependentUpon>frmReconcileMerchantGatewaySetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Reports\frmReconileMerchantGatewayInst.resx">
+      <DependentUpon>frmReconileMerchantGatewayInst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Reports\rptReconcileMerchantGateway.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReconcileMerchantGateway.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmGoogleCalULOptions.resx">
+      <DependentUpon>frmGoogleCalULOptions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmSyncCustomFlags.resx">
+      <DependentUpon>frmSyncCustomFlags.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmTestPassphrase.resx">
+      <DependentUpon>frmTestPassphrase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmTestWebService.resx">
+      <DependentUpon>frmTestWebService.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmTextMessage.resx">
+      <DependentUpon>frmTextMessage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmUpdateLog.resx">
+      <DependentUpon>frmUpdateLog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactInfo\AddressStandardization\Reports\frmNCOASummaryReport.resx">
+      <DependentUpon>frmNCOASummaryReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactInfo\AddStdV2\frmAddStdV2.resx">
+      <DependentUpon>frmAddStdV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactInfo\AddStdV2\frmAddStdV2Results.resx">
+      <DependentUpon>frmAddStdV2Results.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactInfo\AddStdV2\frmMORNCOAAlerts.resx">
+      <DependentUpon>frmMORNCOAAlerts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CTAnywhere\frmCTADashboard.resx">
+      <DependentUpon>frmCTADashboard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donor\frmDonorExpressDetails.resx">
+      <DependentUpon>frmDonorExpressDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donor\frmAddXCVault.resx">
+      <DependentUpon>frmAddXCVault.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donor\frmAutoGeneratePledgePmts.resx">
+      <DependentUpon>frmAutoGeneratePledgePmts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donor\frmBatchDonorInvite.resx">
+      <DependentUpon>frmBatchDonorInvite.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donor\frmDLGifts.resx">
+      <DependentUpon>frmDLGifts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donor\frmEditPledgeBillingInfo.resx">
+      <DependentUpon>frmEditPledgeBillingInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donor\frmProcessGifts.resx">
+      <DependentUpon>frmProcessGifts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donor\frmULGiftSettings.resx">
+      <DependentUpon>frmULGiftSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donor\frmULGivingHistory.resx">
+      <DependentUpon>frmULGivingHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donor\frmWebGiftDetails.resx">
+      <DependentUpon>frmWebGiftDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donor\Reports\frmDXDetailsViewer.resx">
+      <DependentUpon>frmDXDetailsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donor\Reports\frmWebGiftDetailsViewer.resx">
+      <DependentUpon>frmWebGiftDetailsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donor\Reports\rptDXDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDXDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donor\Reports\rptWebGiftDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptWebGiftDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Donor\Reports\srptDXDetails_CustomFields.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>srptDXDetails_CustomFields.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmGoogleCal.resx">
+      <DependentUpon>frmGoogleCal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GGCC\frmCollectRefundAmt.resx">
+      <DependentUpon>frmCollectRefundAmt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\frmCollectRefundAmt.resx">
+      <DependentUpon>frmCollectRefundAmt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\frmSyncTrans.resx">
+      <DependentUpon>frmSyncTrans.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\frmIndRegUL.resx">
+      <DependentUpon>frmIndRegUL.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\frmProfileDetails.resx">
+      <DependentUpon>frmProfileDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\frmUseRegHold.resx">
+      <DependentUpon>frmUseRegHold.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\Messaging\frmImgUL.resx">
+      <DependentUpon>frmImgUL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\Reports\frmBatchWebCamperDetailSetup.resx">
+      <DependentUpon>frmBatchWebCamperDetailSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\Reports\frmTransDownloads.resx">
+      <DependentUpon>frmTransDownloads.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\Reports\frmTransDownloadsSetup.resx">
+      <DependentUpon>frmTransDownloadsSetup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\Reports\frmWebCamperDetails.resx">
+      <DependentUpon>frmWebCamperDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\Reports\rptTransDownloads.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTransDownloads.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\Reports\rptWebCamperDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptWebCamperDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\Reports\srptWebCamperDetails_BlockChoices.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>srptWebCamperDetails_BlockChoices.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\Reports\srptWebCamperDetails_CustomFieldsCamper.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>srptWebCamperDetails_CustomFieldsCamper.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\Reports\srptWebCamperDetails_CustomFieldsProfile.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>srptWebCamperDetails_CustomFieldsProfile.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\Reports\srptWebCamperDetails_CustomFieldsReg.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>srptWebCamperDetails_CustomFieldsReg.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\Setup\frmDiscounts.resx">
+      <DependentUpon>frmDiscounts.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\Setup\frmMinDep.resx">
+      <DependentUpon>frmMinDep.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IRUtils\Dev.resx">
+      <DependentUpon>Dev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IRUtils\frmAddIR.resx">
+      <DependentUpon>frmAddIR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IRUtils\frmFindIR.resx">
+      <DependentUpon>frmFindIR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmReferredBy.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmReferredBy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSwitchboard.resx">
+      <DependentUpon>frmSwitchboard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\frmSystemSetup.resx">
+      <DependentUpon>frmSystemSetup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GGCC\frmAddIRForGGCCWebReg.resx">
+      <DependentUpon>frmAddIRForGGCCWebReg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GGCC\frmDLEvents.resx">
+      <DependentUpon>frmDLEvents.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GGCC\frmGGCCRegDetails.resx">
+      <DependentUpon>frmGGCCRegDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GGCC\frmPickMatchGGCCWebRegRecord.resx">
+      <DependentUpon>frmPickMatchGGCCWebRegRecord.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GGCC\frmProcessGGCCReg.resx">
+      <DependentUpon>frmProcessGGCCReg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GGCC\frmReconcileWebGGCCReg.resx">
+      <DependentUpon>frmReconcileWebGGCCReg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GGCC\frmUploadEvents.resx">
+      <DependentUpon>frmUploadEvents.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\frmDLIndReg.resx">
+      <DependentUpon>frmDLIndReg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\frmIndRegDetails.resx">
+      <DependentUpon>frmIndRegDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\frmProcessIndReg.resx">
+      <DependentUpon>frmProcessIndReg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ind\frmSpecialNeeds.resx">
+      <DependentUpon>frmSpecialNeeds.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IRUtils\frmReconcileIR.resx">
+      <DependentUpon>frmReconcileIR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactInfo\frmRecordInformation.resx">
+      <DependentUpon>frmRecordInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MORUtils\frmAddMOR.resx">
+      <DependentUpon>frmAddMOR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MORUtils\frmFindMOR.resx">
+      <DependentUpon>frmFindMOR.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Web References\wsCashLinq\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsEPSReporting\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsEPSServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsEPSTrans\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsMDSmartMoverV2B\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsXCharge\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsXferEventInfoV2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsXferEventInfo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://smartmover.melissadata.net/v2b/smartmover.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsMDSmartMoverV2B\</RelPath>
+      <UpdateFromURL>http://smartmover.melissadata.net/v2b/smartmover.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CTWebMgmt_wsMDSmartMoverV2B_SmartMover</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://dlq4.donatelinq.net/cqwebservice/CQ.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsCashLinq\</RelPath>
+      <UpdateFromURL>https://dlq4.donatelinq.net/cqwebservice/CQ.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CTWebMgmt_wsCashLinq_CQ</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://reporting.elementexpress.com/express.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsEPSReporting\</RelPath>
+      <UpdateFromURL>https://reporting.elementexpress.com/express.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CTWebMgmt_wsEPSReporting_Express</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://services.elementexpress.com/express.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsEPSServices\</RelPath>
+      <UpdateFromURL>https://services.elementexpress.com/express.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CTWebMgmt_wsEPSServices_Express</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://transaction.elementexpress.com/express.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsEPSTrans\</RelPath>
+      <UpdateFromURL>https://transaction.elementexpress.com/express.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CTWebMgmt_wsEPSTrans_Express</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://webservices.primerchants.com/CheckVerifyWS/CheckVerifyWS.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsXCharge\</RelPath>
+      <UpdateFromURL>https://webservices.primerchants.com/CheckVerifyWS/CheckVerifyWS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CTWebMgmt_wsXCharge_CheckVerify</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://www.camptrak.com/xfereventinfo/xfereventinfo.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsXferEventInfo\</RelPath>
+      <UpdateFromURL>https://www.camptrak.com/xfereventinfo/xfereventinfo.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CTWebMgmt_wsXferEventInfo_XferEventInfo</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://www.camptrak.com/xfereventinfov2/xfereventinfov2.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsXferEventInfoV2\</RelPath>
+      <UpdateFromURL>https://www.camptrak.com/xfereventinfov2/xfereventinfov2.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CTWebMgmt_wsXferEventInfoV2_xfereventinfov2</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="TelerikCommon">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Xceed.SmartUI">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Xceed.SmartUI.Controls">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Xceed.SmartUI.UIStyle">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wsXCharge\CheckStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsXCharge\CheckVerifyWS.disco" />
+    <None Include="Web References\wsXCharge\CheckVerifyWS.wsdl" />
+    <None Include="Web References\wsXCharge\RecurringStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsXCharge\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="XCTransaction2">
+      <Guid>{BA037CD7-1C76-4635-87D0-5C88FD041F2E}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wsCashLinq\CQ.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wsCashLinq\CQ.disco" />
+    <None Include="Web References\wsCashLinq\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsCashLinq\Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsXferEventInfo\xfereventinfo.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wsXferEventInfo\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsXferEventInfo\xfereventinfo.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wsMDSmartMoverV2B\CustomerIDResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsMDSmartMoverV2B\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsMDSmartMoverV2B\RespCASSReport.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsMDSmartMoverV2B\RespNCOALinkReportLink.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsMDSmartMoverV2B\RespNCOALinkSummaryReport.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsMDSmartMoverV2B\ResponseArray.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsMDSmartMoverV2B\smartmover.disco" />
+    <None Include="Web References\wsMDSmartMoverV2B\smartmover.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wsEPSServices\express.disco" />
+    <None Include="Web References\wsEPSServices\express.wsdl" />
+    <None Include="Web References\wsEPSServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsEPSServices\Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wsEPSTrans\express.disco" />
+    <None Include="Web References\wsEPSTrans\express.wsdl" />
+    <None Include="Web References\wsEPSTrans\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsEPSTrans\Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wsEPSReporting\express.disco" />
+    <None Include="Web References\wsEPSReporting\express.wsdl" />
+    <None Include="Web References\wsEPSReporting\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsEPSReporting\Response.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\wsXferEventInfoV2\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsXferEventInfoV2\xfereventinfov2.disco" />
+    <None Include="Web References\wsXferEventInfoV2\xfereventinfov2.wsdl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

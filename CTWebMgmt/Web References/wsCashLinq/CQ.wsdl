@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://dlq4.donatelinq.net/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="https://dlq4.donatelinq.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://dlq4.donatelinq.net/">
+      <s:element name="MerchLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MerchLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReconciled_Repeat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:unsignedByte" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSecureToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PageName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReconciled_RepeatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReconciled_RepeatResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReconciled">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:unsignedByte" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSecureToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PageName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReconciledResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReconciledResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFaileds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:unsignedByte" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSecureToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PageName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFailedsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFailedsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReturns">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:unsignedByte" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSecureToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PageName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReturnsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReturnsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:unsignedByte" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSecureToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PageName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RepeatSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:unsignedByte" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSecureToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="ScheduledDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RepeatSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RepeatSaleResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExtData" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetAVSResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetAVSResultTXT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetCommercialCard" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetCVResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetCVResultTXT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetGetOrigResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetStreetMatchTXT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetZipMatchTXT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HostCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HostURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KeyPointer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PNRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiptURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RespMSG" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkingKey" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Refund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:unsignedByte" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSecureToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RefundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RefundResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SecureSubmit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pagename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="q_login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name_value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SecureSubmitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecureSubmitResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrxData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:unsignedByte" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSecureToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pnref" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrxDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTrxDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrxHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:unsignedByte" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSecureToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pnref" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrxHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTrxHistoryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:unsignedByte" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSecureToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PNREF" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Start_Date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Repeat_Time" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Number_Of_Payments" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePaymentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCCExpiration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:unsignedByte" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSecureToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PNREF" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCCExpirationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateCCExpirationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePayer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:unsignedByte" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSecureToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PNREF" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="FName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Addr1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Addr2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePayerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePayerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:unsignedByte" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserSecureToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PNREF" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEFT_Failures">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="startdate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="enddate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="GatewayKey" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEFT_FailuresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEFT_FailuresResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEFT_NOC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="startdate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="enddate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="GatewayKey" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEFT_NOCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEFT_NOCResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MerchLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:MerchLogin" />
+  </wsdl:message>
+  <wsdl:message name="MerchLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:MerchLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReconciled_RepeatSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReconciled_Repeat" />
+  </wsdl:message>
+  <wsdl:message name="GetReconciled_RepeatSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReconciled_RepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReconciledSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReconciled" />
+  </wsdl:message>
+  <wsdl:message name="GetReconciledSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReconciledResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFailedsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFaileds" />
+  </wsdl:message>
+  <wsdl:message name="GetFailedsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFailedsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReturnsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReturns" />
+  </wsdl:message>
+  <wsdl:message name="GetReturnsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReturnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportData" />
+  </wsdl:message>
+  <wsdl:message name="ExportDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="RepeatSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:RepeatSale" />
+  </wsdl:message>
+  <wsdl:message name="RepeatSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:RepeatSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="RefundSoapIn">
+    <wsdl:part name="parameters" element="tns:Refund" />
+  </wsdl:message>
+  <wsdl:message name="RefundSoapOut">
+    <wsdl:part name="parameters" element="tns:RefundResponse" />
+  </wsdl:message>
+  <wsdl:message name="SecureSubmitSoapIn">
+    <wsdl:part name="parameters" element="tns:SecureSubmit" />
+  </wsdl:message>
+  <wsdl:message name="SecureSubmitSoapOut">
+    <wsdl:part name="parameters" element="tns:SecureSubmitResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTrxDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTrxData" />
+  </wsdl:message>
+  <wsdl:message name="GetTrxDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTrxDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTrxHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetTrxHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetTrxHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetTrxHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePayment" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCCExpirationSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCCExpiration" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCCExpirationSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCCExpirationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePayerSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePayer" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePayerSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelTransaction" />
+  </wsdl:message>
+  <wsdl:message name="CancelTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEFT_FailuresSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEFT_Failures" />
+  </wsdl:message>
+  <wsdl:message name="GetEFT_FailuresSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEFT_FailuresResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEFT_NOCSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEFT_NOC" />
+  </wsdl:message>
+  <wsdl:message name="GetEFT_NOCSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEFT_NOCResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CQSoap">
+    <wsdl:operation name="MerchLogin">
+      <wsdl:input message="tns:MerchLoginSoapIn" />
+      <wsdl:output message="tns:MerchLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReconciled_Repeat">
+      <wsdl:input message="tns:GetReconciled_RepeatSoapIn" />
+      <wsdl:output message="tns:GetReconciled_RepeatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReconciled">
+      <wsdl:input message="tns:GetReconciledSoapIn" />
+      <wsdl:output message="tns:GetReconciledSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFaileds">
+      <wsdl:input message="tns:GetFailedsSoapIn" />
+      <wsdl:output message="tns:GetFailedsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReturns">
+      <wsdl:input message="tns:GetReturnsSoapIn" />
+      <wsdl:output message="tns:GetReturnsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportData">
+      <wsdl:input message="tns:ExportDataSoapIn" />
+      <wsdl:output message="tns:ExportDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RepeatSale">
+      <wsdl:input message="tns:RepeatSaleSoapIn" />
+      <wsdl:output message="tns:RepeatSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Refund">
+      <wsdl:input message="tns:RefundSoapIn" />
+      <wsdl:output message="tns:RefundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SecureSubmit">
+      <wsdl:input message="tns:SecureSubmitSoapIn" />
+      <wsdl:output message="tns:SecureSubmitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrxData">
+      <wsdl:input message="tns:GetTrxDataSoapIn" />
+      <wsdl:output message="tns:GetTrxDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrxHistory">
+      <wsdl:input message="tns:GetTrxHistorySoapIn" />
+      <wsdl:output message="tns:GetTrxHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePayment">
+      <wsdl:input message="tns:UpdatePaymentSoapIn" />
+      <wsdl:output message="tns:UpdatePaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCCExpiration">
+      <wsdl:input message="tns:UpdateCCExpirationSoapIn" />
+      <wsdl:output message="tns:UpdateCCExpirationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePayer">
+      <wsdl:input message="tns:UpdatePayerSoapIn" />
+      <wsdl:output message="tns:UpdatePayerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelTransaction">
+      <wsdl:input message="tns:CancelTransactionSoapIn" />
+      <wsdl:output message="tns:CancelTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEFT_Failures">
+      <wsdl:input message="tns:GetEFT_FailuresSoapIn" />
+      <wsdl:output message="tns:GetEFT_FailuresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEFT_NOC">
+      <wsdl:input message="tns:GetEFT_NOCSoapIn" />
+      <wsdl:output message="tns:GetEFT_NOCSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CQSoap" type="tns:CQSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MerchLogin">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/MerchLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReconciled_Repeat">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/GetReconciled_Repeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReconciled">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/GetReconciled" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFaileds">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/GetFaileds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReturns">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/GetReturns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportData">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/ExportData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RepeatSale">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/RepeatSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Refund">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/Refund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSubmit">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/SecureSubmit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrxData">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/GetTrxData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrxHistory">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/GetTrxHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePayment">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/UpdatePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCCExpiration">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/UpdateCCExpiration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePayer">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/UpdatePayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelTransaction">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/CancelTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEFT_Failures">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/GetEFT_Failures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEFT_NOC">
+      <soap:operation soapAction="https://dlq4.donatelinq.net/GetEFT_NOC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CQSoap12" type="tns:CQSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MerchLogin">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/MerchLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReconciled_Repeat">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/GetReconciled_Repeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReconciled">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/GetReconciled" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFaileds">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/GetFaileds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReturns">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/GetReturns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportData">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/ExportData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RepeatSale">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/RepeatSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Refund">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/Refund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SecureSubmit">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/SecureSubmit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrxData">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/GetTrxData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrxHistory">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/GetTrxHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePayment">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/UpdatePayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCCExpiration">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/UpdateCCExpiration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePayer">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/UpdatePayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelTransaction">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/CancelTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEFT_Failures">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/GetEFT_Failures" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEFT_NOC">
+      <soap12:operation soapAction="https://dlq4.donatelinq.net/GetEFT_NOC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CQ">
+    <wsdl:port name="CQSoap" binding="tns:CQSoap">
+      <soap:address location="https://dlq4.donatelinq.net/cqwebservice/CQ.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CQSoap12" binding="tns:CQSoap12">
+      <soap12:address location="https://dlq4.donatelinq.net/cqwebservice/CQ.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

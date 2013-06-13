@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://smartmover.melissadata.net/v2b/smartmover.asmx?wsdl" docRef="http://smartmover.melissadata.net/v2b/smartmover.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://smartmover.melissadata.net/v2b/smartmover.asmx" xmlns:q1="urn:mdSmartMoverService" binding="q1:SmartMoverSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://smartmover.melissadata.net/v2b/smartmover.asmx" xmlns:q2="urn:mdSmartMoverService" binding="q2:SmartMoverSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

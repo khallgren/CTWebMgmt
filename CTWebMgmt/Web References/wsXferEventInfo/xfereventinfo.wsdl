@@ -1,0 +1,3566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://www.camptrak.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="https://www.camptrak.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://www.camptrak.com/">
+      <s:element name="fcnTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnTestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnClearErrs_1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnClearErrs_1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fcnClearErrs_1Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnClearErrs_2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strTbl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnClearErrs_2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fcnClearErrs_2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUpdateDLStatus_1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUpdateDLStatus_1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fcnUpdateDLStatus_1Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUpdateDLStatus_2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUpdateDLStatus_2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fcnUpdateDLStatus_2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUpdateDLStatus_3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strTblName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUpdateDLStatus_3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fcnUpdateDLStatus_3Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUpdateDLStatus_4">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strTblName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strWhere" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUpdateDLStatus_4Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnUpdateDLStatus_4Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnGetRecords_1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strSQL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strTblName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnGetRecords_1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnGetRecords_1Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnGetRecordsXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strTblName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strSQL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnGetRecordsXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnGetRecordsXMLResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnGetRecords_2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strSQL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strTblName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnGetRecords_2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnGetRecords_2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnDLRes_1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strResXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnDLRes_1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnDLRes_1Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnDLRes_2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strResXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnDLRes_2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnDLRes_2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnProcessCTXMLUpload_1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngCTUserID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strInput" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strAppendSProc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strKeyFld" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strFldToReturn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnProcessCTXMLUpload_1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnProcessCTXMLUpload_1Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnProcessCTXMLUpload_2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngCTUserID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strInput" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strAppendSProc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strKeyFld" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strFldToReturn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_blnClearAll" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnProcessCTXMLUpload_2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnProcessCTXMLUpload_2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnProcessCTXMLUpload_3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strInput" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strAppendSProc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strKeyFld" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strFldToReturn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_blnClearAll" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strKeyType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnProcessCTXMLUpload_3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnProcessCTXMLUpload_3Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnAddInt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnAddIntResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fcnAddIntResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnMarkWebCamperAsRetrieved">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCamperID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strDir" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnMarkWebCamperAsRetrievedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fcnMarkWebCamperAsRetrievedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnProcessIRUpload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strInput" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnProcessIRUploadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnProcessIRUploadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUpdateDefault">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strFldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strVal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strDataType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUpdateDefaultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnUpdateDefaultResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUpdateCustomVal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strFldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strVal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUpdateCustomValResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnUpdateCustomValResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnProcessCTXMLUploadToTbl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strInput" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strAppendSProc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strKeyFld" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strFldToReturn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_blnClearAll" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strKeyType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strTargetTblName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnProcessCTXMLUploadToTblResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnProcessCTXMLUploadToTblResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUploadData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_xmlNodeToProcess">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="_strTableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strServerKeyField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strLocalKeyField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUploadDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnUploadDataResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUploadData2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_xmlNodeToProcess">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="_strTableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strServerKeyField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strLocalKeyField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_intHoursOffset" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUploadData2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnUploadData2Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUploadDataNoUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_xmlNodeToProcess">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="_strTableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_intHoursOffset" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnUploadDataNoUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnUploadDataNoUpdateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnInitLocalLiveCharge">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="_lngTransactionID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnInitLocalLiveChargeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnInitLocalLiveChargeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnMonitorLocalLiveCharge">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="_lngTransactionID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnMonitorLocalLiveChargeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnMonitorLocalLiveChargeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitCustomFieldDefIR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitCustomFieldDefIRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnCommitCustomFieldDefIRResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitCustomFieldDefReg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitCustomFieldDefRegResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnCommitCustomFieldDefRegResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitWebFlagDefs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitWebFlagDefsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnCommitWebFlagDefsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitIRs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitIRsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnCommitIRsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnGetCustomData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnGetCustomDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnGetCustomDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitMORs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitMORsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnCommitMORsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitMORIRs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitMORIRsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnCommitMORIRsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitRegistrations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitRegistrationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnCommitRegistrationsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitTransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnCommitTransactionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitTransTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitTransTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnCommitTransTypesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitCTUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitCTUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnCommitCTUsersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitWebDiscounts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitWebDiscountsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnCommitWebDiscountsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitMsgImgUL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_strImgFile" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="_lngWeekID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCampID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="_lngHousingID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnCommitMsgImgULResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fcnCommitMsgImgULResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnSetExcludeFromGeneral">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCampID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="_blnExcludeFromGeneral" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnSetExcludeFromGeneralResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fcnSetExcludeFromGeneralResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnGetMultRegFlagCharge">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_lngCTUserID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="_strConn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fcnGetMultRegFlagChargeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fcnGetMultRegFlagChargeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="int" type="s:int" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="fcnTestSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnTest" />
+  </wsdl:message>
+  <wsdl:message name="fcnTestSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnClearErrs_1SoapIn">
+    <wsdl:part name="parameters" element="tns:fcnClearErrs_1" />
+  </wsdl:message>
+  <wsdl:message name="fcnClearErrs_1SoapOut">
+    <wsdl:part name="parameters" element="tns:fcnClearErrs_1Response" />
+  </wsdl:message>
+  <wsdl:message name="fcnClearErrs_2SoapIn">
+    <wsdl:part name="parameters" element="tns:fcnClearErrs_2" />
+  </wsdl:message>
+  <wsdl:message name="fcnClearErrs_2SoapOut">
+    <wsdl:part name="parameters" element="tns:fcnClearErrs_2Response" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_1SoapIn">
+    <wsdl:part name="parameters" element="tns:fcnUpdateDLStatus_1" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_1SoapOut">
+    <wsdl:part name="parameters" element="tns:fcnUpdateDLStatus_1Response" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_2SoapIn">
+    <wsdl:part name="parameters" element="tns:fcnUpdateDLStatus_2" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_2SoapOut">
+    <wsdl:part name="parameters" element="tns:fcnUpdateDLStatus_2Response" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_3SoapIn">
+    <wsdl:part name="parameters" element="tns:fcnUpdateDLStatus_3" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_3SoapOut">
+    <wsdl:part name="parameters" element="tns:fcnUpdateDLStatus_3Response" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_4SoapIn">
+    <wsdl:part name="parameters" element="tns:fcnUpdateDLStatus_4" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_4SoapOut">
+    <wsdl:part name="parameters" element="tns:fcnUpdateDLStatus_4Response" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecords_1SoapIn">
+    <wsdl:part name="parameters" element="tns:fcnGetRecords_1" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecords_1SoapOut">
+    <wsdl:part name="parameters" element="tns:fcnGetRecords_1Response" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecordsXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnGetRecordsXML" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecordsXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnGetRecordsXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecords_2SoapIn">
+    <wsdl:part name="parameters" element="tns:fcnGetRecords_2" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecords_2SoapOut">
+    <wsdl:part name="parameters" element="tns:fcnGetRecords_2Response" />
+  </wsdl:message>
+  <wsdl:message name="fcnDLRes_1SoapIn">
+    <wsdl:part name="parameters" element="tns:fcnDLRes_1" />
+  </wsdl:message>
+  <wsdl:message name="fcnDLRes_1SoapOut">
+    <wsdl:part name="parameters" element="tns:fcnDLRes_1Response" />
+  </wsdl:message>
+  <wsdl:message name="fcnDLRes_2SoapIn">
+    <wsdl:part name="parameters" element="tns:fcnDLRes_2" />
+  </wsdl:message>
+  <wsdl:message name="fcnDLRes_2SoapOut">
+    <wsdl:part name="parameters" element="tns:fcnDLRes_2Response" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_1SoapIn">
+    <wsdl:part name="parameters" element="tns:fcnProcessCTXMLUpload_1" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_1SoapOut">
+    <wsdl:part name="parameters" element="tns:fcnProcessCTXMLUpload_1Response" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_2SoapIn">
+    <wsdl:part name="parameters" element="tns:fcnProcessCTXMLUpload_2" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_2SoapOut">
+    <wsdl:part name="parameters" element="tns:fcnProcessCTXMLUpload_2Response" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_3SoapIn">
+    <wsdl:part name="parameters" element="tns:fcnProcessCTXMLUpload_3" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_3SoapOut">
+    <wsdl:part name="parameters" element="tns:fcnProcessCTXMLUpload_3Response" />
+  </wsdl:message>
+  <wsdl:message name="fcnAddIntSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnAddInt" />
+  </wsdl:message>
+  <wsdl:message name="fcnAddIntSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnAddIntResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnMarkWebCamperAsRetrievedSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnMarkWebCamperAsRetrieved" />
+  </wsdl:message>
+  <wsdl:message name="fcnMarkWebCamperAsRetrievedSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnMarkWebCamperAsRetrievedResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessIRUploadSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnProcessIRUpload" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessIRUploadSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnProcessIRUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDefaultSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnUpdateDefault" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDefaultSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnUpdateDefaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateCustomValSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnUpdateCustomVal" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateCustomValSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnUpdateCustomValResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUploadToTblSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnProcessCTXMLUploadToTbl" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUploadToTblSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnProcessCTXMLUploadToTblResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnUploadDataSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnUploadData" />
+  </wsdl:message>
+  <wsdl:message name="fcnUploadDataSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnUploadDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnUploadData2SoapIn">
+    <wsdl:part name="parameters" element="tns:fcnUploadData2" />
+  </wsdl:message>
+  <wsdl:message name="fcnUploadData2SoapOut">
+    <wsdl:part name="parameters" element="tns:fcnUploadData2Response" />
+  </wsdl:message>
+  <wsdl:message name="fcnUploadDataNoUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnUploadDataNoUpdate" />
+  </wsdl:message>
+  <wsdl:message name="fcnUploadDataNoUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnUploadDataNoUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnInitLocalLiveChargeSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnInitLocalLiveCharge" />
+  </wsdl:message>
+  <wsdl:message name="fcnInitLocalLiveChargeSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnInitLocalLiveChargeResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnMonitorLocalLiveChargeSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnMonitorLocalLiveCharge" />
+  </wsdl:message>
+  <wsdl:message name="fcnMonitorLocalLiveChargeSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnMonitorLocalLiveChargeResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCustomFieldDefIRSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnCommitCustomFieldDefIR" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCustomFieldDefIRSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnCommitCustomFieldDefIRResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCustomFieldDefRegSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnCommitCustomFieldDefReg" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCustomFieldDefRegSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnCommitCustomFieldDefRegResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitWebFlagDefsSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnCommitWebFlagDefs" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitWebFlagDefsSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnCommitWebFlagDefsResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitIRsSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnCommitIRs" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitIRsSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnCommitIRsResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetCustomDataSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnGetCustomData" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetCustomDataSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnGetCustomDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMORsSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnCommitMORs" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMORsSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnCommitMORsResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMORIRsSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnCommitMORIRs" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMORIRsSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnCommitMORIRsResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitRegistrationsSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnCommitRegistrations" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitRegistrationsSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnCommitRegistrationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnCommitTransactions" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnCommitTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitTransTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnCommitTransTypes" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitTransTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnCommitTransTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCTUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnCommitCTUsers" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCTUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnCommitCTUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitWebDiscountsSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnCommitWebDiscounts" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitWebDiscountsSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnCommitWebDiscountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMsgImgULSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnCommitMsgImgUL" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMsgImgULSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnCommitMsgImgULResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnSetExcludeFromGeneralSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnSetExcludeFromGeneral" />
+  </wsdl:message>
+  <wsdl:message name="fcnSetExcludeFromGeneralSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnSetExcludeFromGeneralResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetMultRegFlagChargeSoapIn">
+    <wsdl:part name="parameters" element="tns:fcnGetMultRegFlagCharge" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetMultRegFlagChargeSoapOut">
+    <wsdl:part name="parameters" element="tns:fcnGetMultRegFlagChargeResponse" />
+  </wsdl:message>
+  <wsdl:message name="fcnTestHttpGetIn">
+    <wsdl:part name="_strIn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnTestHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnClearErrs_1HttpGetIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnClearErrs_1HttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="fcnClearErrs_2HttpGetIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+    <wsdl:part name="_strTbl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnClearErrs_2HttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_1HttpGetIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_1HttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_2HttpGetIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_2HttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_3HttpGetIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+    <wsdl:part name="_strTblName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_3HttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_4HttpGetIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+    <wsdl:part name="_strTblName" type="s:string" />
+    <wsdl:part name="_strWhere" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_4HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecords_1HttpGetIn">
+    <wsdl:part name="_strSQL" type="s:string" />
+    <wsdl:part name="_strTblName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecords_1HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecordsXMLHttpGetIn">
+    <wsdl:part name="_strTblName" type="s:string" />
+    <wsdl:part name="_strSQL" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecordsXMLHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecords_2HttpGetIn">
+    <wsdl:part name="_strSQL" type="s:string" />
+    <wsdl:part name="_strTblName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecords_2HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnDLRes_1HttpGetIn">
+    <wsdl:part name="_strResXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnDLRes_1HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnDLRes_2HttpGetIn">
+    <wsdl:part name="_strResXML" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnDLRes_2HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_1HttpGetIn">
+    <wsdl:part name="lngCTUserID" type="s:string" />
+    <wsdl:part name="_strInput" type="s:string" />
+    <wsdl:part name="_strAppendSProc" type="s:string" />
+    <wsdl:part name="_strKeyFld" type="s:string" />
+    <wsdl:part name="_strFldToReturn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_1HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_2HttpGetIn">
+    <wsdl:part name="lngCTUserID" type="s:string" />
+    <wsdl:part name="_strInput" type="s:string" />
+    <wsdl:part name="_strAppendSProc" type="s:string" />
+    <wsdl:part name="_strKeyFld" type="s:string" />
+    <wsdl:part name="_strFldToReturn" type="s:string" />
+    <wsdl:part name="_blnClearAll" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_2HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_3HttpGetIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strInput" type="s:string" />
+    <wsdl:part name="_strAppendSProc" type="s:string" />
+    <wsdl:part name="_strKeyFld" type="s:string" />
+    <wsdl:part name="_strFldToReturn" type="s:string" />
+    <wsdl:part name="_blnClearAll" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+    <wsdl:part name="_strKeyType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_3HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnAddIntHttpGetIn">
+    <wsdl:part name="intA" type="s:string" />
+    <wsdl:part name="intB" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnAddIntHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="fcnMarkWebCamperAsRetrievedHttpGetIn">
+    <wsdl:part name="_lngCamperID" type="s:string" />
+    <wsdl:part name="_strDir" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnMarkWebCamperAsRetrievedHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessIRUploadHttpGetIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strInput" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessIRUploadHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDefaultHttpGetIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strFldName" type="s:string" />
+    <wsdl:part name="_strVal" type="s:string" />
+    <wsdl:part name="_strDataType" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDefaultHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateCustomValHttpGetIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strFldName" type="s:string" />
+    <wsdl:part name="_strVal" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateCustomValHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUploadToTblHttpGetIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strInput" type="s:string" />
+    <wsdl:part name="_strAppendSProc" type="s:string" />
+    <wsdl:part name="_strKeyFld" type="s:string" />
+    <wsdl:part name="_strFldToReturn" type="s:string" />
+    <wsdl:part name="_blnClearAll" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+    <wsdl:part name="_strKeyType" type="s:string" />
+    <wsdl:part name="_strTargetTblName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUploadToTblHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnInitLocalLiveChargeHttpGetIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_lngTransactionID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnInitLocalLiveChargeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnMonitorLocalLiveChargeHttpGetIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_lngTransactionID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnMonitorLocalLiveChargeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCustomFieldDefIRHttpGetIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCustomFieldDefIRHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCustomFieldDefRegHttpGetIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCustomFieldDefRegHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitWebFlagDefsHttpGetIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitWebFlagDefsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitIRsHttpGetIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitIRsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetCustomDataHttpGetIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetCustomDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMORsHttpGetIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMORsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMORIRsHttpGetIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMORIRsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitRegistrationsHttpGetIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitRegistrationsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitTransactionsHttpGetIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitTransactionsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitTransTypesHttpGetIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitTransTypesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCTUsersHttpGetIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCTUsersHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitWebDiscountsHttpGetIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitWebDiscountsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMsgImgULHttpGetIn">
+    <wsdl:part name="_strImgFile" type="s:string" />
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_lngWeekID" type="s:string" />
+    <wsdl:part name="_lngCampID" type="s:string" />
+    <wsdl:part name="_lngHousingID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMsgImgULHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnSetExcludeFromGeneralHttpGetIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_lngCampID" type="s:string" />
+    <wsdl:part name="_blnExcludeFromGeneral" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnSetExcludeFromGeneralHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetMultRegFlagChargeHttpGetIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetMultRegFlagChargeHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="fcnTestHttpPostIn">
+    <wsdl:part name="_strIn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnTestHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnClearErrs_1HttpPostIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnClearErrs_1HttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="fcnClearErrs_2HttpPostIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+    <wsdl:part name="_strTbl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnClearErrs_2HttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_1HttpPostIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_1HttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_2HttpPostIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_2HttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_3HttpPostIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+    <wsdl:part name="_strTblName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_3HttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_4HttpPostIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+    <wsdl:part name="_strTblName" type="s:string" />
+    <wsdl:part name="_strWhere" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDLStatus_4HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecords_1HttpPostIn">
+    <wsdl:part name="_strSQL" type="s:string" />
+    <wsdl:part name="_strTblName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecords_1HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecordsXMLHttpPostIn">
+    <wsdl:part name="_strTblName" type="s:string" />
+    <wsdl:part name="_strSQL" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecordsXMLHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecords_2HttpPostIn">
+    <wsdl:part name="_strSQL" type="s:string" />
+    <wsdl:part name="_strTblName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetRecords_2HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnDLRes_1HttpPostIn">
+    <wsdl:part name="_strResXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnDLRes_1HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnDLRes_2HttpPostIn">
+    <wsdl:part name="_strResXML" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnDLRes_2HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_1HttpPostIn">
+    <wsdl:part name="lngCTUserID" type="s:string" />
+    <wsdl:part name="_strInput" type="s:string" />
+    <wsdl:part name="_strAppendSProc" type="s:string" />
+    <wsdl:part name="_strKeyFld" type="s:string" />
+    <wsdl:part name="_strFldToReturn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_1HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_2HttpPostIn">
+    <wsdl:part name="lngCTUserID" type="s:string" />
+    <wsdl:part name="_strInput" type="s:string" />
+    <wsdl:part name="_strAppendSProc" type="s:string" />
+    <wsdl:part name="_strKeyFld" type="s:string" />
+    <wsdl:part name="_strFldToReturn" type="s:string" />
+    <wsdl:part name="_blnClearAll" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_2HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_3HttpPostIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strInput" type="s:string" />
+    <wsdl:part name="_strAppendSProc" type="s:string" />
+    <wsdl:part name="_strKeyFld" type="s:string" />
+    <wsdl:part name="_strFldToReturn" type="s:string" />
+    <wsdl:part name="_blnClearAll" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+    <wsdl:part name="_strKeyType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUpload_3HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnAddIntHttpPostIn">
+    <wsdl:part name="intA" type="s:string" />
+    <wsdl:part name="intB" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnAddIntHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="fcnMarkWebCamperAsRetrievedHttpPostIn">
+    <wsdl:part name="_lngCamperID" type="s:string" />
+    <wsdl:part name="_strDir" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnMarkWebCamperAsRetrievedHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessIRUploadHttpPostIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strInput" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessIRUploadHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDefaultHttpPostIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strFldName" type="s:string" />
+    <wsdl:part name="_strVal" type="s:string" />
+    <wsdl:part name="_strDataType" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateDefaultHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateCustomValHttpPostIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strFldName" type="s:string" />
+    <wsdl:part name="_strVal" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnUpdateCustomValHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUploadToTblHttpPostIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strInput" type="s:string" />
+    <wsdl:part name="_strAppendSProc" type="s:string" />
+    <wsdl:part name="_strKeyFld" type="s:string" />
+    <wsdl:part name="_strFldToReturn" type="s:string" />
+    <wsdl:part name="_blnClearAll" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+    <wsdl:part name="_strKeyType" type="s:string" />
+    <wsdl:part name="_strTargetTblName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnProcessCTXMLUploadToTblHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnInitLocalLiveChargeHttpPostIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_lngTransactionID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnInitLocalLiveChargeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnMonitorLocalLiveChargeHttpPostIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_lngTransactionID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnMonitorLocalLiveChargeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCustomFieldDefIRHttpPostIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCustomFieldDefIRHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCustomFieldDefRegHttpPostIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCustomFieldDefRegHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitWebFlagDefsHttpPostIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitWebFlagDefsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitIRsHttpPostIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitIRsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetCustomDataHttpPostIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetCustomDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMORsHttpPostIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMORsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMORIRsHttpPostIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMORIRsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitRegistrationsHttpPostIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitRegistrationsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitTransactionsHttpPostIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitTransactionsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitTransTypesHttpPostIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitTransTypesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCTUsersHttpPostIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitCTUsersHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitWebDiscountsHttpPostIn">
+    <wsdl:part name="_strFileName" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitWebDiscountsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMsgImgULHttpPostIn">
+    <wsdl:part name="_strImgFile" type="s:string" />
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_lngWeekID" type="s:string" />
+    <wsdl:part name="_lngCampID" type="s:string" />
+    <wsdl:part name="_lngHousingID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnCommitMsgImgULHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnSetExcludeFromGeneralHttpPostIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_lngCampID" type="s:string" />
+    <wsdl:part name="_blnExcludeFromGeneral" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnSetExcludeFromGeneralHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetMultRegFlagChargeHttpPostIn">
+    <wsdl:part name="_lngCTUserID" type="s:string" />
+    <wsdl:part name="_strConn" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fcnGetMultRegFlagChargeHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="XferEventInfoSoap">
+    <wsdl:operation name="fcnTest">
+      <wsdl:input message="tns:fcnTestSoapIn" />
+      <wsdl:output message="tns:fcnTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnClearErrs">
+      <wsdl:input name="fcnClearErrs_1" message="tns:fcnClearErrs_1SoapIn" />
+      <wsdl:output name="fcnClearErrs_1" message="tns:fcnClearErrs_1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnClearErrs">
+      <wsdl:input name="fcnClearErrs_2" message="tns:fcnClearErrs_2SoapIn" />
+      <wsdl:output name="fcnClearErrs_2" message="tns:fcnClearErrs_2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <wsdl:input name="fcnUpdateDLStatus_1" message="tns:fcnUpdateDLStatus_1SoapIn" />
+      <wsdl:output name="fcnUpdateDLStatus_1" message="tns:fcnUpdateDLStatus_1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <wsdl:input name="fcnUpdateDLStatus_2" message="tns:fcnUpdateDLStatus_2SoapIn" />
+      <wsdl:output name="fcnUpdateDLStatus_2" message="tns:fcnUpdateDLStatus_2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <wsdl:input name="fcnUpdateDLStatus_3" message="tns:fcnUpdateDLStatus_3SoapIn" />
+      <wsdl:output name="fcnUpdateDLStatus_3" message="tns:fcnUpdateDLStatus_3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatusWErr">
+      <wsdl:input name="fcnUpdateDLStatus_4" message="tns:fcnUpdateDLStatus_4SoapIn" />
+      <wsdl:output name="fcnUpdateDLStatus_4" message="tns:fcnUpdateDLStatus_4SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecords">
+      <wsdl:input name="fcnGetRecords_1" message="tns:fcnGetRecords_1SoapIn" />
+      <wsdl:output name="fcnGetRecords_1" message="tns:fcnGetRecords_1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecordsXML">
+      <wsdl:input message="tns:fcnGetRecordsXMLSoapIn" />
+      <wsdl:output message="tns:fcnGetRecordsXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecords">
+      <wsdl:input name="fcnGetRecords_2" message="tns:fcnGetRecords_2SoapIn" />
+      <wsdl:output name="fcnGetRecords_2" message="tns:fcnGetRecords_2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnDLRes">
+      <wsdl:input name="fcnDLRes_1" message="tns:fcnDLRes_1SoapIn" />
+      <wsdl:output name="fcnDLRes_1" message="tns:fcnDLRes_1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnDLRes">
+      <wsdl:input name="fcnDLRes_2" message="tns:fcnDLRes_2SoapIn" />
+      <wsdl:output name="fcnDLRes_2" message="tns:fcnDLRes_2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(Overloaded) 20071212: Processes XML uploads and displays XML results for each record processed.</wsdl:documentation>
+      <wsdl:input name="fcnProcessCTXMLUpload_1" message="tns:fcnProcessCTXMLUpload_1SoapIn" />
+      <wsdl:output name="fcnProcessCTXMLUpload_1" message="tns:fcnProcessCTXMLUpload_1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(Overloaded) 20071212: Processes XML uploads and displays XML results for each record processed.</wsdl:documentation>
+      <wsdl:input name="fcnProcessCTXMLUpload_2" message="tns:fcnProcessCTXMLUpload_2SoapIn" />
+      <wsdl:output name="fcnProcessCTXMLUpload_2" message="tns:fcnProcessCTXMLUpload_2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">20071212: Processes XML uploads and displays XML results for each record processed.</wsdl:documentation>
+      <wsdl:input name="fcnProcessCTXMLUpload_3" message="tns:fcnProcessCTXMLUpload_3SoapIn" />
+      <wsdl:output name="fcnProcessCTXMLUpload_3" message="tns:fcnProcessCTXMLUpload_3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnAddInt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Function to receive two integers and return their sum.  Used for testing connectivity to CampTrak web service.</wsdl:documentation>
+      <wsdl:input message="tns:fcnAddIntSoapIn" />
+      <wsdl:output message="tns:fcnAddIntSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnMarkWebCamperAsRetrieved">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Input a web directory and camper id and the camper will be marked as 'retrieved'.</wsdl:documentation>
+      <wsdl:input message="tns:fcnMarkWebCamperAsRetrievedSoapIn" />
+      <wsdl:output message="tns:fcnMarkWebCamperAsRetrievedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessIRUpload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">20080819: Processes IR XML uploads and displays XML results for each record processed.</wsdl:documentation>
+      <wsdl:input message="tns:fcnProcessIRUploadSoapIn" />
+      <wsdl:output message="tns:fcnProcessIRUploadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDefault">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">20080918: Receive a field name, value, and data type.  Update the field with the new value.</wsdl:documentation>
+      <wsdl:input message="tns:fcnUpdateDefaultSoapIn" />
+      <wsdl:output message="tns:fcnUpdateDefaultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateCustomVal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receive a field name and value.  Update the field with the new value.</wsdl:documentation>
+      <wsdl:input message="tns:fcnUpdateCustomValSoapIn" />
+      <wsdl:output message="tns:fcnUpdateCustomValSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUploadToTbl">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Processes XML uploads and displays XML results for each record processed (into different table).</wsdl:documentation>
+      <wsdl:input message="tns:fcnProcessCTXMLUploadToTblSoapIn" />
+      <wsdl:output message="tns:fcnProcessCTXMLUploadToTblSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUploadData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Processes XML uploads and displays XML results for each record processed.  New records are added, existing are updated.</wsdl:documentation>
+      <wsdl:input message="tns:fcnUploadDataSoapIn" />
+      <wsdl:output message="tns:fcnUploadDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUploadData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Processes XML uploads and displays XML results for each record processed.  New records are added, existing are updated.</wsdl:documentation>
+      <wsdl:input name="fcnUploadData2" message="tns:fcnUploadData2SoapIn" />
+      <wsdl:output name="fcnUploadData2" message="tns:fcnUploadData2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUploadDataNoUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Processes XML upload.  New records are added, existing are deleted.</wsdl:documentation>
+      <wsdl:input message="tns:fcnUploadDataNoUpdateSoapIn" />
+      <wsdl:output message="tns:fcnUploadDataNoUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnInitLiveChargeMonitoring">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets a local CampTrak transaction id and adds it to a table on the web server.  This transaction is monitored by the local application for live charge results.</wsdl:documentation>
+      <wsdl:input name="fcnInitLocalLiveCharge" message="tns:fcnInitLocalLiveChargeSoapIn" />
+      <wsdl:output name="fcnInitLocalLiveCharge" message="tns:fcnInitLocalLiveChargeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnMonitorLocalLiveCharge">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets a local CampTrak transaction id and checks its status in the table on the web server.</wsdl:documentation>
+      <wsdl:input message="tns:fcnMonitorLocalLiveChargeSoapIn" />
+      <wsdl:output message="tns:fcnMonitorLocalLiveChargeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCustomFieldDefIR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML definition of web flag and field definitions, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitCustomFieldDefIRSoapIn" />
+      <wsdl:output message="tns:fcnCommitCustomFieldDefIRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCustomFieldDefReg">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML definition of reg flag and field definitions, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitCustomFieldDefRegSoapIn" />
+      <wsdl:output message="tns:fcnCommitCustomFieldDefRegSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitWebFlagDefs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML definition of web flag and field definitions, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitWebFlagDefsSoapIn" />
+      <wsdl:output message="tns:fcnCommitWebFlagDefsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitIRs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of individual records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitIRsSoapIn" />
+      <wsdl:output message="tns:fcnCommitIRsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetCustomData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of record ids, returns custom field data for those ids</wsdl:documentation>
+      <wsdl:input message="tns:fcnGetCustomDataSoapIn" />
+      <wsdl:output message="tns:fcnGetCustomDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMORs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of primary master/organization records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitMORsSoapIn" />
+      <wsdl:output message="tns:fcnCommitMORsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMORIRs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of master/organization relationship records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitMORIRsSoapIn" />
+      <wsdl:output message="tns:fcnCommitMORIRsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitRegistrations">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of registration records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitRegistrationsSoapIn" />
+      <wsdl:output message="tns:fcnCommitRegistrationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitTransactions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of transaction records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitTransactionsSoapIn" />
+      <wsdl:output message="tns:fcnCommitTransactionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitTransTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of trans type records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitTransTypesSoapIn" />
+      <wsdl:output message="tns:fcnCommitTransTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCTUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of user security records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitCTUsersSoapIn" />
+      <wsdl:output message="tns:fcnCommitCTUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitDiscountDefs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML definition of discount definitions, updates database appropriately</wsdl:documentation>
+      <wsdl:input name="fcnCommitWebDiscounts" message="tns:fcnCommitWebDiscountsSoapIn" />
+      <wsdl:output name="fcnCommitWebDiscounts" message="tns:fcnCommitWebDiscountsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMsgImgUL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an image file name, CTUserID, week, program, and housing name.  It sizes the image, moves it to the right directory, and adds it to the db.</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitMsgImgULSoapIn" />
+      <wsdl:output message="tns:fcnCommitMsgImgULSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnSetExcludeFromGeneral">
+      <wsdl:input message="tns:fcnSetExcludeFromGeneralSoapIn" />
+      <wsdl:output message="tns:fcnSetExcludeFromGeneralSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetMultRegFlagCharge">
+      <wsdl:input message="tns:fcnGetMultRegFlagChargeSoapIn" />
+      <wsdl:output message="tns:fcnGetMultRegFlagChargeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="XferEventInfoHttpGet">
+    <wsdl:operation name="fcnTest">
+      <wsdl:input message="tns:fcnTestHttpGetIn" />
+      <wsdl:output message="tns:fcnTestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnClearErrs">
+      <wsdl:input name="fcnClearErrs_1" message="tns:fcnClearErrs_1HttpGetIn" />
+      <wsdl:output name="fcnClearErrs_1" message="tns:fcnClearErrs_1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnClearErrs">
+      <wsdl:input name="fcnClearErrs_2" message="tns:fcnClearErrs_2HttpGetIn" />
+      <wsdl:output name="fcnClearErrs_2" message="tns:fcnClearErrs_2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <wsdl:input name="fcnUpdateDLStatus_1" message="tns:fcnUpdateDLStatus_1HttpGetIn" />
+      <wsdl:output name="fcnUpdateDLStatus_1" message="tns:fcnUpdateDLStatus_1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <wsdl:input name="fcnUpdateDLStatus_2" message="tns:fcnUpdateDLStatus_2HttpGetIn" />
+      <wsdl:output name="fcnUpdateDLStatus_2" message="tns:fcnUpdateDLStatus_2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <wsdl:input name="fcnUpdateDLStatus_3" message="tns:fcnUpdateDLStatus_3HttpGetIn" />
+      <wsdl:output name="fcnUpdateDLStatus_3" message="tns:fcnUpdateDLStatus_3HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatusWErr">
+      <wsdl:input name="fcnUpdateDLStatus_4" message="tns:fcnUpdateDLStatus_4HttpGetIn" />
+      <wsdl:output name="fcnUpdateDLStatus_4" message="tns:fcnUpdateDLStatus_4HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecords">
+      <wsdl:input name="fcnGetRecords_1" message="tns:fcnGetRecords_1HttpGetIn" />
+      <wsdl:output name="fcnGetRecords_1" message="tns:fcnGetRecords_1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecordsXML">
+      <wsdl:input message="tns:fcnGetRecordsXMLHttpGetIn" />
+      <wsdl:output message="tns:fcnGetRecordsXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecords">
+      <wsdl:input name="fcnGetRecords_2" message="tns:fcnGetRecords_2HttpGetIn" />
+      <wsdl:output name="fcnGetRecords_2" message="tns:fcnGetRecords_2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnDLRes">
+      <wsdl:input name="fcnDLRes_1" message="tns:fcnDLRes_1HttpGetIn" />
+      <wsdl:output name="fcnDLRes_1" message="tns:fcnDLRes_1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnDLRes">
+      <wsdl:input name="fcnDLRes_2" message="tns:fcnDLRes_2HttpGetIn" />
+      <wsdl:output name="fcnDLRes_2" message="tns:fcnDLRes_2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(Overloaded) 20071212: Processes XML uploads and displays XML results for each record processed.</wsdl:documentation>
+      <wsdl:input name="fcnProcessCTXMLUpload_1" message="tns:fcnProcessCTXMLUpload_1HttpGetIn" />
+      <wsdl:output name="fcnProcessCTXMLUpload_1" message="tns:fcnProcessCTXMLUpload_1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(Overloaded) 20071212: Processes XML uploads and displays XML results for each record processed.</wsdl:documentation>
+      <wsdl:input name="fcnProcessCTXMLUpload_2" message="tns:fcnProcessCTXMLUpload_2HttpGetIn" />
+      <wsdl:output name="fcnProcessCTXMLUpload_2" message="tns:fcnProcessCTXMLUpload_2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">20071212: Processes XML uploads and displays XML results for each record processed.</wsdl:documentation>
+      <wsdl:input name="fcnProcessCTXMLUpload_3" message="tns:fcnProcessCTXMLUpload_3HttpGetIn" />
+      <wsdl:output name="fcnProcessCTXMLUpload_3" message="tns:fcnProcessCTXMLUpload_3HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnAddInt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Function to receive two integers and return their sum.  Used for testing connectivity to CampTrak web service.</wsdl:documentation>
+      <wsdl:input message="tns:fcnAddIntHttpGetIn" />
+      <wsdl:output message="tns:fcnAddIntHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnMarkWebCamperAsRetrieved">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Input a web directory and camper id and the camper will be marked as 'retrieved'.</wsdl:documentation>
+      <wsdl:input message="tns:fcnMarkWebCamperAsRetrievedHttpGetIn" />
+      <wsdl:output message="tns:fcnMarkWebCamperAsRetrievedHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessIRUpload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">20080819: Processes IR XML uploads and displays XML results for each record processed.</wsdl:documentation>
+      <wsdl:input message="tns:fcnProcessIRUploadHttpGetIn" />
+      <wsdl:output message="tns:fcnProcessIRUploadHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDefault">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">20080918: Receive a field name, value, and data type.  Update the field with the new value.</wsdl:documentation>
+      <wsdl:input message="tns:fcnUpdateDefaultHttpGetIn" />
+      <wsdl:output message="tns:fcnUpdateDefaultHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateCustomVal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receive a field name and value.  Update the field with the new value.</wsdl:documentation>
+      <wsdl:input message="tns:fcnUpdateCustomValHttpGetIn" />
+      <wsdl:output message="tns:fcnUpdateCustomValHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUploadToTbl">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Processes XML uploads and displays XML results for each record processed (into different table).</wsdl:documentation>
+      <wsdl:input message="tns:fcnProcessCTXMLUploadToTblHttpGetIn" />
+      <wsdl:output message="tns:fcnProcessCTXMLUploadToTblHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnInitLiveChargeMonitoring">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets a local CampTrak transaction id and adds it to a table on the web server.  This transaction is monitored by the local application for live charge results.</wsdl:documentation>
+      <wsdl:input name="fcnInitLocalLiveCharge" message="tns:fcnInitLocalLiveChargeHttpGetIn" />
+      <wsdl:output name="fcnInitLocalLiveCharge" message="tns:fcnInitLocalLiveChargeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnMonitorLocalLiveCharge">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets a local CampTrak transaction id and checks its status in the table on the web server.</wsdl:documentation>
+      <wsdl:input message="tns:fcnMonitorLocalLiveChargeHttpGetIn" />
+      <wsdl:output message="tns:fcnMonitorLocalLiveChargeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCustomFieldDefIR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML definition of web flag and field definitions, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitCustomFieldDefIRHttpGetIn" />
+      <wsdl:output message="tns:fcnCommitCustomFieldDefIRHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCustomFieldDefReg">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML definition of reg flag and field definitions, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitCustomFieldDefRegHttpGetIn" />
+      <wsdl:output message="tns:fcnCommitCustomFieldDefRegHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitWebFlagDefs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML definition of web flag and field definitions, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitWebFlagDefsHttpGetIn" />
+      <wsdl:output message="tns:fcnCommitWebFlagDefsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitIRs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of individual records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitIRsHttpGetIn" />
+      <wsdl:output message="tns:fcnCommitIRsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetCustomData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of record ids, returns custom field data for those ids</wsdl:documentation>
+      <wsdl:input message="tns:fcnGetCustomDataHttpGetIn" />
+      <wsdl:output message="tns:fcnGetCustomDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMORs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of primary master/organization records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitMORsHttpGetIn" />
+      <wsdl:output message="tns:fcnCommitMORsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMORIRs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of master/organization relationship records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitMORIRsHttpGetIn" />
+      <wsdl:output message="tns:fcnCommitMORIRsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitRegistrations">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of registration records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitRegistrationsHttpGetIn" />
+      <wsdl:output message="tns:fcnCommitRegistrationsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitTransactions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of transaction records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitTransactionsHttpGetIn" />
+      <wsdl:output message="tns:fcnCommitTransactionsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitTransTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of trans type records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitTransTypesHttpGetIn" />
+      <wsdl:output message="tns:fcnCommitTransTypesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCTUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of user security records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitCTUsersHttpGetIn" />
+      <wsdl:output message="tns:fcnCommitCTUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitDiscountDefs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML definition of discount definitions, updates database appropriately</wsdl:documentation>
+      <wsdl:input name="fcnCommitWebDiscounts" message="tns:fcnCommitWebDiscountsHttpGetIn" />
+      <wsdl:output name="fcnCommitWebDiscounts" message="tns:fcnCommitWebDiscountsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMsgImgUL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an image file name, CTUserID, week, program, and housing name.  It sizes the image, moves it to the right directory, and adds it to the db.</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitMsgImgULHttpGetIn" />
+      <wsdl:output message="tns:fcnCommitMsgImgULHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnSetExcludeFromGeneral">
+      <wsdl:input message="tns:fcnSetExcludeFromGeneralHttpGetIn" />
+      <wsdl:output message="tns:fcnSetExcludeFromGeneralHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetMultRegFlagCharge">
+      <wsdl:input message="tns:fcnGetMultRegFlagChargeHttpGetIn" />
+      <wsdl:output message="tns:fcnGetMultRegFlagChargeHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="XferEventInfoHttpPost">
+    <wsdl:operation name="fcnTest">
+      <wsdl:input message="tns:fcnTestHttpPostIn" />
+      <wsdl:output message="tns:fcnTestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnClearErrs">
+      <wsdl:input name="fcnClearErrs_1" message="tns:fcnClearErrs_1HttpPostIn" />
+      <wsdl:output name="fcnClearErrs_1" message="tns:fcnClearErrs_1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnClearErrs">
+      <wsdl:input name="fcnClearErrs_2" message="tns:fcnClearErrs_2HttpPostIn" />
+      <wsdl:output name="fcnClearErrs_2" message="tns:fcnClearErrs_2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <wsdl:input name="fcnUpdateDLStatus_1" message="tns:fcnUpdateDLStatus_1HttpPostIn" />
+      <wsdl:output name="fcnUpdateDLStatus_1" message="tns:fcnUpdateDLStatus_1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <wsdl:input name="fcnUpdateDLStatus_2" message="tns:fcnUpdateDLStatus_2HttpPostIn" />
+      <wsdl:output name="fcnUpdateDLStatus_2" message="tns:fcnUpdateDLStatus_2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <wsdl:input name="fcnUpdateDLStatus_3" message="tns:fcnUpdateDLStatus_3HttpPostIn" />
+      <wsdl:output name="fcnUpdateDLStatus_3" message="tns:fcnUpdateDLStatus_3HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatusWErr">
+      <wsdl:input name="fcnUpdateDLStatus_4" message="tns:fcnUpdateDLStatus_4HttpPostIn" />
+      <wsdl:output name="fcnUpdateDLStatus_4" message="tns:fcnUpdateDLStatus_4HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecords">
+      <wsdl:input name="fcnGetRecords_1" message="tns:fcnGetRecords_1HttpPostIn" />
+      <wsdl:output name="fcnGetRecords_1" message="tns:fcnGetRecords_1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecordsXML">
+      <wsdl:input message="tns:fcnGetRecordsXMLHttpPostIn" />
+      <wsdl:output message="tns:fcnGetRecordsXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecords">
+      <wsdl:input name="fcnGetRecords_2" message="tns:fcnGetRecords_2HttpPostIn" />
+      <wsdl:output name="fcnGetRecords_2" message="tns:fcnGetRecords_2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnDLRes">
+      <wsdl:input name="fcnDLRes_1" message="tns:fcnDLRes_1HttpPostIn" />
+      <wsdl:output name="fcnDLRes_1" message="tns:fcnDLRes_1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnDLRes">
+      <wsdl:input name="fcnDLRes_2" message="tns:fcnDLRes_2HttpPostIn" />
+      <wsdl:output name="fcnDLRes_2" message="tns:fcnDLRes_2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(Overloaded) 20071212: Processes XML uploads and displays XML results for each record processed.</wsdl:documentation>
+      <wsdl:input name="fcnProcessCTXMLUpload_1" message="tns:fcnProcessCTXMLUpload_1HttpPostIn" />
+      <wsdl:output name="fcnProcessCTXMLUpload_1" message="tns:fcnProcessCTXMLUpload_1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">(Overloaded) 20071212: Processes XML uploads and displays XML results for each record processed.</wsdl:documentation>
+      <wsdl:input name="fcnProcessCTXMLUpload_2" message="tns:fcnProcessCTXMLUpload_2HttpPostIn" />
+      <wsdl:output name="fcnProcessCTXMLUpload_2" message="tns:fcnProcessCTXMLUpload_2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">20071212: Processes XML uploads and displays XML results for each record processed.</wsdl:documentation>
+      <wsdl:input name="fcnProcessCTXMLUpload_3" message="tns:fcnProcessCTXMLUpload_3HttpPostIn" />
+      <wsdl:output name="fcnProcessCTXMLUpload_3" message="tns:fcnProcessCTXMLUpload_3HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnAddInt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Function to receive two integers and return their sum.  Used for testing connectivity to CampTrak web service.</wsdl:documentation>
+      <wsdl:input message="tns:fcnAddIntHttpPostIn" />
+      <wsdl:output message="tns:fcnAddIntHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnMarkWebCamperAsRetrieved">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Input a web directory and camper id and the camper will be marked as 'retrieved'.</wsdl:documentation>
+      <wsdl:input message="tns:fcnMarkWebCamperAsRetrievedHttpPostIn" />
+      <wsdl:output message="tns:fcnMarkWebCamperAsRetrievedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessIRUpload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">20080819: Processes IR XML uploads and displays XML results for each record processed.</wsdl:documentation>
+      <wsdl:input message="tns:fcnProcessIRUploadHttpPostIn" />
+      <wsdl:output message="tns:fcnProcessIRUploadHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDefault">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">20080918: Receive a field name, value, and data type.  Update the field with the new value.</wsdl:documentation>
+      <wsdl:input message="tns:fcnUpdateDefaultHttpPostIn" />
+      <wsdl:output message="tns:fcnUpdateDefaultHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateCustomVal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receive a field name and value.  Update the field with the new value.</wsdl:documentation>
+      <wsdl:input message="tns:fcnUpdateCustomValHttpPostIn" />
+      <wsdl:output message="tns:fcnUpdateCustomValHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUploadToTbl">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Processes XML uploads and displays XML results for each record processed (into different table).</wsdl:documentation>
+      <wsdl:input message="tns:fcnProcessCTXMLUploadToTblHttpPostIn" />
+      <wsdl:output message="tns:fcnProcessCTXMLUploadToTblHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnInitLiveChargeMonitoring">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets a local CampTrak transaction id and adds it to a table on the web server.  This transaction is monitored by the local application for live charge results.</wsdl:documentation>
+      <wsdl:input name="fcnInitLocalLiveCharge" message="tns:fcnInitLocalLiveChargeHttpPostIn" />
+      <wsdl:output name="fcnInitLocalLiveCharge" message="tns:fcnInitLocalLiveChargeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnMonitorLocalLiveCharge">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets a local CampTrak transaction id and checks its status in the table on the web server.</wsdl:documentation>
+      <wsdl:input message="tns:fcnMonitorLocalLiveChargeHttpPostIn" />
+      <wsdl:output message="tns:fcnMonitorLocalLiveChargeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCustomFieldDefIR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML definition of web flag and field definitions, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitCustomFieldDefIRHttpPostIn" />
+      <wsdl:output message="tns:fcnCommitCustomFieldDefIRHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCustomFieldDefReg">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML definition of reg flag and field definitions, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitCustomFieldDefRegHttpPostIn" />
+      <wsdl:output message="tns:fcnCommitCustomFieldDefRegHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitWebFlagDefs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML definition of web flag and field definitions, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitWebFlagDefsHttpPostIn" />
+      <wsdl:output message="tns:fcnCommitWebFlagDefsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitIRs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of individual records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitIRsHttpPostIn" />
+      <wsdl:output message="tns:fcnCommitIRsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetCustomData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of record ids, returns custom field data for those ids</wsdl:documentation>
+      <wsdl:input message="tns:fcnGetCustomDataHttpPostIn" />
+      <wsdl:output message="tns:fcnGetCustomDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMORs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of primary master/organization records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitMORsHttpPostIn" />
+      <wsdl:output message="tns:fcnCommitMORsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMORIRs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of master/organization relationship records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitMORIRsHttpPostIn" />
+      <wsdl:output message="tns:fcnCommitMORIRsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitRegistrations">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of registration records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitRegistrationsHttpPostIn" />
+      <wsdl:output message="tns:fcnCommitRegistrationsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitTransactions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of transaction records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitTransactionsHttpPostIn" />
+      <wsdl:output message="tns:fcnCommitTransactionsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitTransTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of trans type records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitTransTypesHttpPostIn" />
+      <wsdl:output message="tns:fcnCommitTransTypesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCTUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML file of user security records, updates database appropriately</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitCTUsersHttpPostIn" />
+      <wsdl:output message="tns:fcnCommitCTUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitDiscountDefs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an XML definition of discount definitions, updates database appropriately</wsdl:documentation>
+      <wsdl:input name="fcnCommitWebDiscounts" message="tns:fcnCommitWebDiscountsHttpPostIn" />
+      <wsdl:output name="fcnCommitWebDiscounts" message="tns:fcnCommitWebDiscountsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMsgImgUL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Receives an image file name, CTUserID, week, program, and housing name.  It sizes the image, moves it to the right directory, and adds it to the db.</wsdl:documentation>
+      <wsdl:input message="tns:fcnCommitMsgImgULHttpPostIn" />
+      <wsdl:output message="tns:fcnCommitMsgImgULHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnSetExcludeFromGeneral">
+      <wsdl:input message="tns:fcnSetExcludeFromGeneralHttpPostIn" />
+      <wsdl:output message="tns:fcnSetExcludeFromGeneralHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetMultRegFlagCharge">
+      <wsdl:input message="tns:fcnGetMultRegFlagChargeHttpPostIn" />
+      <wsdl:output message="tns:fcnGetMultRegFlagChargeHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="XferEventInfoSoap" type="tns:XferEventInfoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="fcnTest">
+      <soap:operation soapAction="https://www.camptrak.com/fcnTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnClearErrs">
+      <soap:operation soapAction="https://www.camptrak.com/fcnClearErrs_1" style="document" />
+      <wsdl:input name="fcnClearErrs_1">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnClearErrs_1">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnClearErrs">
+      <soap:operation soapAction="https://www.camptrak.com/fcnClearErrs_2" style="document" />
+      <wsdl:input name="fcnClearErrs_2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnClearErrs_2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <soap:operation soapAction="https://www.camptrak.com/fcnUpdateDLStatus_1" style="document" />
+      <wsdl:input name="fcnUpdateDLStatus_1">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_1">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <soap:operation soapAction="https://www.camptrak.com/fcnUpdateDLStatus_2" style="document" />
+      <wsdl:input name="fcnUpdateDLStatus_2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <soap:operation soapAction="https://www.camptrak.com/fcnUpdateDLStatus_3" style="document" />
+      <wsdl:input name="fcnUpdateDLStatus_3">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_3">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatusWErr">
+      <soap:operation soapAction="https://www.camptrak.com/fcnUpdateDLStatus_4" style="document" />
+      <wsdl:input name="fcnUpdateDLStatus_4">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_4">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecords">
+      <soap:operation soapAction="https://www.camptrak.com/fcnGetRecords_1" style="document" />
+      <wsdl:input name="fcnGetRecords_1">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnGetRecords_1">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecordsXML">
+      <soap:operation soapAction="https://www.camptrak.com/fcnGetRecordsXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecords">
+      <soap:operation soapAction="https://www.camptrak.com/fcnGetRecords_2" style="document" />
+      <wsdl:input name="fcnGetRecords_2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnGetRecords_2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnDLRes">
+      <soap:operation soapAction="https://www.camptrak.com/fcnDLRes_1" style="document" />
+      <wsdl:input name="fcnDLRes_1">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnDLRes_1">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnDLRes">
+      <soap:operation soapAction="https://www.camptrak.com/fcnDLRes_2" style="document" />
+      <wsdl:input name="fcnDLRes_2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnDLRes_2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <soap:operation soapAction="https://www.camptrak.com/fcnProcessCTXMLUpload_1" style="document" />
+      <wsdl:input name="fcnProcessCTXMLUpload_1">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnProcessCTXMLUpload_1">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <soap:operation soapAction="https://www.camptrak.com/fcnProcessCTXMLUpload_2" style="document" />
+      <wsdl:input name="fcnProcessCTXMLUpload_2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnProcessCTXMLUpload_2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <soap:operation soapAction="https://www.camptrak.com/fcnProcessCTXMLUpload_3" style="document" />
+      <wsdl:input name="fcnProcessCTXMLUpload_3">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnProcessCTXMLUpload_3">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnAddInt">
+      <soap:operation soapAction="https://www.camptrak.com/fcnAddInt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnMarkWebCamperAsRetrieved">
+      <soap:operation soapAction="https://www.camptrak.com/fcnMarkWebCamperAsRetrieved" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessIRUpload">
+      <soap:operation soapAction="https://www.camptrak.com/fcnProcessIRUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDefault">
+      <soap:operation soapAction="https://www.camptrak.com/fcnUpdateDefault" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateCustomVal">
+      <soap:operation soapAction="https://www.camptrak.com/fcnUpdateCustomVal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUploadToTbl">
+      <soap:operation soapAction="https://www.camptrak.com/fcnProcessCTXMLUploadToTbl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUploadData">
+      <soap:operation soapAction="https://www.camptrak.com/fcnUploadData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUploadData">
+      <soap:operation soapAction="https://www.camptrak.com/fcnUploadData2" style="document" />
+      <wsdl:input name="fcnUploadData2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnUploadData2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUploadDataNoUpdate">
+      <soap:operation soapAction="https://www.camptrak.com/fcnUploadDataNoUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnInitLiveChargeMonitoring">
+      <soap:operation soapAction="https://www.camptrak.com/fcnInitLocalLiveCharge" style="document" />
+      <wsdl:input name="fcnInitLocalLiveCharge">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnInitLocalLiveCharge">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnMonitorLocalLiveCharge">
+      <soap:operation soapAction="https://www.camptrak.com/fcnMonitorLocalLiveCharge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCustomFieldDefIR">
+      <soap:operation soapAction="https://www.camptrak.com/fcnCommitCustomFieldDefIR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCustomFieldDefReg">
+      <soap:operation soapAction="https://www.camptrak.com/fcnCommitCustomFieldDefReg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitWebFlagDefs">
+      <soap:operation soapAction="https://www.camptrak.com/fcnCommitWebFlagDefs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitIRs">
+      <soap:operation soapAction="https://www.camptrak.com/fcnCommitIRs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetCustomData">
+      <soap:operation soapAction="https://www.camptrak.com/fcnGetCustomData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMORs">
+      <soap:operation soapAction="https://www.camptrak.com/fcnCommitMORs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMORIRs">
+      <soap:operation soapAction="https://www.camptrak.com/fcnCommitMORIRs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitRegistrations">
+      <soap:operation soapAction="https://www.camptrak.com/fcnCommitRegistrations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitTransactions">
+      <soap:operation soapAction="https://www.camptrak.com/fcnCommitTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitTransTypes">
+      <soap:operation soapAction="https://www.camptrak.com/fcnCommitTransTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCTUsers">
+      <soap:operation soapAction="https://www.camptrak.com/fcnCommitCTUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitDiscountDefs">
+      <soap:operation soapAction="https://www.camptrak.com/fcnCommitWebDiscounts" style="document" />
+      <wsdl:input name="fcnCommitWebDiscounts">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnCommitWebDiscounts">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMsgImgUL">
+      <soap:operation soapAction="https://www.camptrak.com/fcnCommitMsgImgUL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnSetExcludeFromGeneral">
+      <soap:operation soapAction="https://www.camptrak.com/fcnSetExcludeFromGeneral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetMultRegFlagCharge">
+      <soap:operation soapAction="https://www.camptrak.com/fcnGetMultRegFlagCharge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="XferEventInfoSoap12" type="tns:XferEventInfoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="fcnTest">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnClearErrs">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnClearErrs_1" style="document" />
+      <wsdl:input name="fcnClearErrs_1">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnClearErrs_1">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnClearErrs">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnClearErrs_2" style="document" />
+      <wsdl:input name="fcnClearErrs_2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnClearErrs_2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnUpdateDLStatus_1" style="document" />
+      <wsdl:input name="fcnUpdateDLStatus_1">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_1">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnUpdateDLStatus_2" style="document" />
+      <wsdl:input name="fcnUpdateDLStatus_2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnUpdateDLStatus_3" style="document" />
+      <wsdl:input name="fcnUpdateDLStatus_3">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_3">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatusWErr">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnUpdateDLStatus_4" style="document" />
+      <wsdl:input name="fcnUpdateDLStatus_4">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_4">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecords">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnGetRecords_1" style="document" />
+      <wsdl:input name="fcnGetRecords_1">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnGetRecords_1">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecordsXML">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnGetRecordsXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecords">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnGetRecords_2" style="document" />
+      <wsdl:input name="fcnGetRecords_2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnGetRecords_2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnDLRes">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnDLRes_1" style="document" />
+      <wsdl:input name="fcnDLRes_1">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnDLRes_1">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnDLRes">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnDLRes_2" style="document" />
+      <wsdl:input name="fcnDLRes_2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnDLRes_2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnProcessCTXMLUpload_1" style="document" />
+      <wsdl:input name="fcnProcessCTXMLUpload_1">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnProcessCTXMLUpload_1">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnProcessCTXMLUpload_2" style="document" />
+      <wsdl:input name="fcnProcessCTXMLUpload_2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnProcessCTXMLUpload_2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnProcessCTXMLUpload_3" style="document" />
+      <wsdl:input name="fcnProcessCTXMLUpload_3">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnProcessCTXMLUpload_3">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnAddInt">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnAddInt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnMarkWebCamperAsRetrieved">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnMarkWebCamperAsRetrieved" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessIRUpload">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnProcessIRUpload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDefault">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnUpdateDefault" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateCustomVal">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnUpdateCustomVal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUploadToTbl">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnProcessCTXMLUploadToTbl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUploadData">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnUploadData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUploadData">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnUploadData2" style="document" />
+      <wsdl:input name="fcnUploadData2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnUploadData2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUploadDataNoUpdate">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnUploadDataNoUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnInitLiveChargeMonitoring">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnInitLocalLiveCharge" style="document" />
+      <wsdl:input name="fcnInitLocalLiveCharge">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnInitLocalLiveCharge">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnMonitorLocalLiveCharge">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnMonitorLocalLiveCharge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCustomFieldDefIR">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnCommitCustomFieldDefIR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCustomFieldDefReg">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnCommitCustomFieldDefReg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitWebFlagDefs">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnCommitWebFlagDefs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitIRs">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnCommitIRs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetCustomData">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnGetCustomData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMORs">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnCommitMORs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMORIRs">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnCommitMORIRs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitRegistrations">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnCommitRegistrations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitTransactions">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnCommitTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitTransTypes">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnCommitTransTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCTUsers">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnCommitCTUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitDiscountDefs">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnCommitWebDiscounts" style="document" />
+      <wsdl:input name="fcnCommitWebDiscounts">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="fcnCommitWebDiscounts">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMsgImgUL">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnCommitMsgImgUL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnSetExcludeFromGeneral">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnSetExcludeFromGeneral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetMultRegFlagCharge">
+      <soap12:operation soapAction="https://www.camptrak.com/fcnGetMultRegFlagCharge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="XferEventInfoHttpGet" type="tns:XferEventInfoHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="fcnTest">
+      <http:operation location="/fcnTest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnClearErrs">
+      <http:operation location="/fcnClearErrs_1" />
+      <wsdl:input name="fcnClearErrs_1">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="fcnClearErrs_1">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnClearErrs">
+      <http:operation location="/fcnClearErrs_2" />
+      <wsdl:input name="fcnClearErrs_2">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="fcnClearErrs_2">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <http:operation location="/fcnUpdateDLStatus_1" />
+      <wsdl:input name="fcnUpdateDLStatus_1">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_1">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <http:operation location="/fcnUpdateDLStatus_2" />
+      <wsdl:input name="fcnUpdateDLStatus_2">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_2">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <http:operation location="/fcnUpdateDLStatus_3" />
+      <wsdl:input name="fcnUpdateDLStatus_3">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_3">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatusWErr">
+      <http:operation location="/fcnUpdateDLStatus_4" />
+      <wsdl:input name="fcnUpdateDLStatus_4">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_4">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecords">
+      <http:operation location="/fcnGetRecords_1" />
+      <wsdl:input name="fcnGetRecords_1">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="fcnGetRecords_1">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecordsXML">
+      <http:operation location="/fcnGetRecordsXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecords">
+      <http:operation location="/fcnGetRecords_2" />
+      <wsdl:input name="fcnGetRecords_2">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="fcnGetRecords_2">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnDLRes">
+      <http:operation location="/fcnDLRes_1" />
+      <wsdl:input name="fcnDLRes_1">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="fcnDLRes_1">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnDLRes">
+      <http:operation location="/fcnDLRes_2" />
+      <wsdl:input name="fcnDLRes_2">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="fcnDLRes_2">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <http:operation location="/fcnProcessCTXMLUpload_1" />
+      <wsdl:input name="fcnProcessCTXMLUpload_1">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="fcnProcessCTXMLUpload_1">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <http:operation location="/fcnProcessCTXMLUpload_2" />
+      <wsdl:input name="fcnProcessCTXMLUpload_2">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="fcnProcessCTXMLUpload_2">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <http:operation location="/fcnProcessCTXMLUpload_3" />
+      <wsdl:input name="fcnProcessCTXMLUpload_3">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="fcnProcessCTXMLUpload_3">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnAddInt">
+      <http:operation location="/fcnAddInt" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnMarkWebCamperAsRetrieved">
+      <http:operation location="/fcnMarkWebCamperAsRetrieved" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessIRUpload">
+      <http:operation location="/fcnProcessIRUpload" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDefault">
+      <http:operation location="/fcnUpdateDefault" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateCustomVal">
+      <http:operation location="/fcnUpdateCustomVal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUploadToTbl">
+      <http:operation location="/fcnProcessCTXMLUploadToTbl" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnInitLiveChargeMonitoring">
+      <http:operation location="/fcnInitLocalLiveCharge" />
+      <wsdl:input name="fcnInitLocalLiveCharge">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="fcnInitLocalLiveCharge">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnMonitorLocalLiveCharge">
+      <http:operation location="/fcnMonitorLocalLiveCharge" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCustomFieldDefIR">
+      <http:operation location="/fcnCommitCustomFieldDefIR" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCustomFieldDefReg">
+      <http:operation location="/fcnCommitCustomFieldDefReg" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitWebFlagDefs">
+      <http:operation location="/fcnCommitWebFlagDefs" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitIRs">
+      <http:operation location="/fcnCommitIRs" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetCustomData">
+      <http:operation location="/fcnGetCustomData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMORs">
+      <http:operation location="/fcnCommitMORs" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMORIRs">
+      <http:operation location="/fcnCommitMORIRs" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitRegistrations">
+      <http:operation location="/fcnCommitRegistrations" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitTransactions">
+      <http:operation location="/fcnCommitTransactions" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitTransTypes">
+      <http:operation location="/fcnCommitTransTypes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCTUsers">
+      <http:operation location="/fcnCommitCTUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitDiscountDefs">
+      <http:operation location="/fcnCommitWebDiscounts" />
+      <wsdl:input name="fcnCommitWebDiscounts">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="fcnCommitWebDiscounts">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMsgImgUL">
+      <http:operation location="/fcnCommitMsgImgUL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnSetExcludeFromGeneral">
+      <http:operation location="/fcnSetExcludeFromGeneral" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetMultRegFlagCharge">
+      <http:operation location="/fcnGetMultRegFlagCharge" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="XferEventInfoHttpPost" type="tns:XferEventInfoHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="fcnTest">
+      <http:operation location="/fcnTest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnClearErrs">
+      <http:operation location="/fcnClearErrs_1" />
+      <wsdl:input name="fcnClearErrs_1">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="fcnClearErrs_1">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnClearErrs">
+      <http:operation location="/fcnClearErrs_2" />
+      <wsdl:input name="fcnClearErrs_2">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="fcnClearErrs_2">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <http:operation location="/fcnUpdateDLStatus_1" />
+      <wsdl:input name="fcnUpdateDLStatus_1">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_1">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <http:operation location="/fcnUpdateDLStatus_2" />
+      <wsdl:input name="fcnUpdateDLStatus_2">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_2">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatus">
+      <http:operation location="/fcnUpdateDLStatus_3" />
+      <wsdl:input name="fcnUpdateDLStatus_3">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_3">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDLStatusWErr">
+      <http:operation location="/fcnUpdateDLStatus_4" />
+      <wsdl:input name="fcnUpdateDLStatus_4">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="fcnUpdateDLStatus_4">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecords">
+      <http:operation location="/fcnGetRecords_1" />
+      <wsdl:input name="fcnGetRecords_1">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="fcnGetRecords_1">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecordsXML">
+      <http:operation location="/fcnGetRecordsXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetRecords">
+      <http:operation location="/fcnGetRecords_2" />
+      <wsdl:input name="fcnGetRecords_2">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="fcnGetRecords_2">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnDLRes">
+      <http:operation location="/fcnDLRes_1" />
+      <wsdl:input name="fcnDLRes_1">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="fcnDLRes_1">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnDLRes">
+      <http:operation location="/fcnDLRes_2" />
+      <wsdl:input name="fcnDLRes_2">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="fcnDLRes_2">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <http:operation location="/fcnProcessCTXMLUpload_1" />
+      <wsdl:input name="fcnProcessCTXMLUpload_1">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="fcnProcessCTXMLUpload_1">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <http:operation location="/fcnProcessCTXMLUpload_2" />
+      <wsdl:input name="fcnProcessCTXMLUpload_2">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="fcnProcessCTXMLUpload_2">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUpload">
+      <http:operation location="/fcnProcessCTXMLUpload_3" />
+      <wsdl:input name="fcnProcessCTXMLUpload_3">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="fcnProcessCTXMLUpload_3">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnAddInt">
+      <http:operation location="/fcnAddInt" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnMarkWebCamperAsRetrieved">
+      <http:operation location="/fcnMarkWebCamperAsRetrieved" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessIRUpload">
+      <http:operation location="/fcnProcessIRUpload" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateDefault">
+      <http:operation location="/fcnUpdateDefault" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnUpdateCustomVal">
+      <http:operation location="/fcnUpdateCustomVal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnProcessCTXMLUploadToTbl">
+      <http:operation location="/fcnProcessCTXMLUploadToTbl" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnInitLiveChargeMonitoring">
+      <http:operation location="/fcnInitLocalLiveCharge" />
+      <wsdl:input name="fcnInitLocalLiveCharge">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="fcnInitLocalLiveCharge">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnMonitorLocalLiveCharge">
+      <http:operation location="/fcnMonitorLocalLiveCharge" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCustomFieldDefIR">
+      <http:operation location="/fcnCommitCustomFieldDefIR" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCustomFieldDefReg">
+      <http:operation location="/fcnCommitCustomFieldDefReg" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitWebFlagDefs">
+      <http:operation location="/fcnCommitWebFlagDefs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitIRs">
+      <http:operation location="/fcnCommitIRs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetCustomData">
+      <http:operation location="/fcnGetCustomData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMORs">
+      <http:operation location="/fcnCommitMORs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMORIRs">
+      <http:operation location="/fcnCommitMORIRs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitRegistrations">
+      <http:operation location="/fcnCommitRegistrations" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitTransactions">
+      <http:operation location="/fcnCommitTransactions" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitTransTypes">
+      <http:operation location="/fcnCommitTransTypes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitCTUsers">
+      <http:operation location="/fcnCommitCTUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitDiscountDefs">
+      <http:operation location="/fcnCommitWebDiscounts" />
+      <wsdl:input name="fcnCommitWebDiscounts">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="fcnCommitWebDiscounts">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnCommitMsgImgUL">
+      <http:operation location="/fcnCommitMsgImgUL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnSetExcludeFromGeneral">
+      <http:operation location="/fcnSetExcludeFromGeneral" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fcnGetMultRegFlagCharge">
+      <http:operation location="/fcnGetMultRegFlagCharge" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="XferEventInfo">
+    <wsdl:port name="XferEventInfoSoap" binding="tns:XferEventInfoSoap">
+      <soap:address location="https://www.camptrak.com/xfereventinfo/xfereventinfo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="XferEventInfoSoap12" binding="tns:XferEventInfoSoap12">
+      <soap12:address location="https://www.camptrak.com/xfereventinfo/xfereventinfo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="XferEventInfoHttpGet" binding="tns:XferEventInfoHttpGet">
+      <http:address location="https://www.camptrak.com/xfereventinfo/xfereventinfo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="XferEventInfoHttpPost" binding="tns:XferEventInfoHttpPost">
+      <http:address location="https://www.camptrak.com/xfereventinfo/xfereventinfo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

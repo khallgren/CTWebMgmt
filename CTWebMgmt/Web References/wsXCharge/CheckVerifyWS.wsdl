@@ -1,0 +1,1430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.paymentresource.com/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.paymentresource.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;font size='4'&gt;&lt;a href='http://www.paymentresource.com'&gt;Payment Resources International&lt;/a&gt;&lt;/font&gt; provides this Check Verification Web Service for its customers.&lt;br&gt;In order to verify Check you will need to have a valid Merchant Account with us.For more information on this service click method below.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.paymentresource.com/webservices/">
+      <s:element name="ACHCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransRoute" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankAccountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BankAccountType" type="tns:AccountType" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="checkType" type="tns:CheckType" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="AccountType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Checking" />
+          <s:enumeration value="Saving" />
+          <s:enumeration value="None" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="CheckType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Personal" />
+          <s:enumeration value="Business" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ACHCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ACHCreditResult" type="tns:CheckStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CheckStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PostedDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="RefID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ACHDebit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransRoute" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankAccountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BankAccountType" type="tns:AccountType" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="checkType" type="tns:CheckType" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACHDebitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ACHDebitResult" type="tns:CheckStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACHRecurring">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransRoute" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankAccountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BankAccountType" type="tns:AccountType" />
+            <s:element minOccurs="0" maxOccurs="1" name="NextProcessDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumOfDebits" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="BillingCycle" type="tns:BillingCycles" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="checkType" type="tns:CheckType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="BillingCycles">
+        <s:restriction base="s:string">
+          <s:enumeration value="Monthly" />
+          <s:enumeration value="Quarterly" />
+          <s:enumeration value="Yearly" />
+          <s:enumeration value="Weekly" />
+          <s:enumeration value="BiWeekly" />
+          <s:enumeration value="Every4weeks" />
+          <s:enumeration value="Every8weeks" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ACHRecurringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ACHRecurringResult" type="tns:RecurringStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RecurringStatus">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PostedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RecurringID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RefID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ACHVerify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NctID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransRoute" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankAccountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SettlementDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DriveLicenseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DriveLicenseState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="accountType" type="tns:AccountType" />
+            <s:element minOccurs="1" maxOccurs="1" name="checkType" type="tns:CheckType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACHVerifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ACHVerifyResult" type="tns:CheckStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACHVerifyCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NctID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransRoute" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankAccountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BankAccountType" type="tns:AccountType" />
+            <s:element minOccurs="0" maxOccurs="1" name="SettlementDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DriveLicenseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DriveLicenseState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="checkType" type="tns:CheckType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACHVerifyCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ACHVerifyCreditResult" type="tns:CheckStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACHVerifyDebit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NctID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransRoute" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankAccountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BankAccountType" type="tns:AccountType" />
+            <s:element minOccurs="0" maxOccurs="1" name="SettlementDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DriveLicenseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DriveLicenseState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="checkType" type="tns:CheckType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACHVerifyDebitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ACHVerifyDebitResult" type="tns:CheckStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACHTransactionStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACHTransactionStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ACHTransactionStatusResult" type="tns:CheckStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACHVoidTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACHVoidTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ACHVoidTransactionResult" type="tns:CheckStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostedDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionDetailsResult" type="tns:CheckStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACHVerifyDebitRecurring">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NctID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransRoute" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankAccountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BankAccountType" type="tns:AccountType" />
+            <s:element minOccurs="0" maxOccurs="1" name="SettlementDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DriveLicenseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DriveLicenseState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="checkType" type="tns:CheckType" />
+            <s:element minOccurs="1" maxOccurs="1" name="RecurringID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACHVerifyDebitRecurringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ACHVerifyDebitRecurringResult" type="tns:CheckStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACHVerifyRecurring">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NctID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransRoute" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankAccountNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BankAccountType" type="tns:AccountType" />
+            <s:element minOccurs="0" maxOccurs="1" name="NextProcessDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumOfDebits" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="BillingCycle" type="tns:BillingCycles" />
+            <s:element minOccurs="0" maxOccurs="1" name="DriveLicenseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DriveLicenseState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="checkType" type="tns:CheckType" />
+            <s:element minOccurs="1" maxOccurs="1" name="fullAmountVerify" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACHVerifyRecurringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ACHVerifyRecurringResult" type="tns:RecurringStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckStatus" nillable="true" type="tns:CheckStatus" />
+      <s:element name="RecurringStatus" nillable="true" type="tns:RecurringStatus" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ACHCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:ACHCredit" />
+  </wsdl:message>
+  <wsdl:message name="ACHCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:ACHCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACHDebitSoapIn">
+    <wsdl:part name="parameters" element="tns:ACHDebit" />
+  </wsdl:message>
+  <wsdl:message name="ACHDebitSoapOut">
+    <wsdl:part name="parameters" element="tns:ACHDebitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACHRecurringSoapIn">
+    <wsdl:part name="parameters" element="tns:ACHRecurring" />
+  </wsdl:message>
+  <wsdl:message name="ACHRecurringSoapOut">
+    <wsdl:part name="parameters" element="tns:ACHRecurringResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifySoapIn">
+    <wsdl:part name="parameters" element="tns:ACHVerify" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifySoapOut">
+    <wsdl:part name="parameters" element="tns:ACHVerifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:ACHVerifyCredit" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:ACHVerifyCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyDebitSoapIn">
+    <wsdl:part name="parameters" element="tns:ACHVerifyDebit" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyDebitSoapOut">
+    <wsdl:part name="parameters" element="tns:ACHVerifyDebitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACHTransactionStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:ACHTransactionStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHTransactionStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:ACHTransactionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACHVoidTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:ACHVoidTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ACHVoidTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:ACHVoidTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyDebitRecurringSoapIn">
+    <wsdl:part name="parameters" element="tns:ACHVerifyDebitRecurring" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyDebitRecurringSoapOut">
+    <wsdl:part name="parameters" element="tns:ACHVerifyDebitRecurringResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyRecurringSoapIn">
+    <wsdl:part name="parameters" element="tns:ACHVerifyRecurring" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyRecurringSoapOut">
+    <wsdl:part name="parameters" element="tns:ACHVerifyRecurringResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACHCreditHttpGetIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="BankAccountType" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="ProcessDate" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHCreditHttpGetOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHDebitHttpGetIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="BankAccountType" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="ProcessDate" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHDebitHttpGetOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHRecurringHttpGetIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="BankAccountType" type="s:string" />
+    <wsdl:part name="NextProcessDate" type="s:string" />
+    <wsdl:part name="NumOfDebits" type="s:string" />
+    <wsdl:part name="BillingCycle" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHRecurringHttpGetOut">
+    <wsdl:part name="Body" element="tns:RecurringStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyHttpGetIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="NctID" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="CheckNo" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="SettlementDate" type="s:string" />
+    <wsdl:part name="DriveLicenseNo" type="s:string" />
+    <wsdl:part name="DriveLicenseState" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="accountType" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyHttpGetOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyCreditHttpGetIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="NctID" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="CheckNo" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="BankAccountType" type="s:string" />
+    <wsdl:part name="SettlementDate" type="s:string" />
+    <wsdl:part name="ProcessDate" type="s:string" />
+    <wsdl:part name="DriveLicenseNo" type="s:string" />
+    <wsdl:part name="DriveLicenseState" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyCreditHttpGetOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyDebitHttpGetIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="NctID" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="CheckNo" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="BankAccountType" type="s:string" />
+    <wsdl:part name="SettlementDate" type="s:string" />
+    <wsdl:part name="ProcessDate" type="s:string" />
+    <wsdl:part name="DriveLicenseNo" type="s:string" />
+    <wsdl:part name="DriveLicenseState" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyDebitHttpGetOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHTransactionStatusHttpGetIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="TransID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHTransactionStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHVoidTransactionHttpGetIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="TransID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHVoidTransactionHttpGetOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsHttpGetIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="PostedDate" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyDebitRecurringHttpGetIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="NctID" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="CheckNo" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="BankAccountType" type="s:string" />
+    <wsdl:part name="SettlementDate" type="s:string" />
+    <wsdl:part name="DriveLicenseNo" type="s:string" />
+    <wsdl:part name="DriveLicenseState" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+    <wsdl:part name="RecurringID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyDebitRecurringHttpGetOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyRecurringHttpGetIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="NctID" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="CheckNo" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="BankAccountType" type="s:string" />
+    <wsdl:part name="NextProcessDate" type="s:string" />
+    <wsdl:part name="NumOfDebits" type="s:string" />
+    <wsdl:part name="BillingCycle" type="s:string" />
+    <wsdl:part name="DriveLicenseNo" type="s:string" />
+    <wsdl:part name="DriveLicenseState" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+    <wsdl:part name="fullAmountVerify" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyRecurringHttpGetOut">
+    <wsdl:part name="Body" element="tns:RecurringStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHCreditHttpPostIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="BankAccountType" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="ProcessDate" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHCreditHttpPostOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHDebitHttpPostIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="BankAccountType" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="ProcessDate" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHDebitHttpPostOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHRecurringHttpPostIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="BankAccountType" type="s:string" />
+    <wsdl:part name="NextProcessDate" type="s:string" />
+    <wsdl:part name="NumOfDebits" type="s:string" />
+    <wsdl:part name="BillingCycle" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHRecurringHttpPostOut">
+    <wsdl:part name="Body" element="tns:RecurringStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyHttpPostIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="NctID" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="CheckNo" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="SettlementDate" type="s:string" />
+    <wsdl:part name="DriveLicenseNo" type="s:string" />
+    <wsdl:part name="DriveLicenseState" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="accountType" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyHttpPostOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyCreditHttpPostIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="NctID" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="CheckNo" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="BankAccountType" type="s:string" />
+    <wsdl:part name="SettlementDate" type="s:string" />
+    <wsdl:part name="ProcessDate" type="s:string" />
+    <wsdl:part name="DriveLicenseNo" type="s:string" />
+    <wsdl:part name="DriveLicenseState" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyCreditHttpPostOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyDebitHttpPostIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="NctID" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="CheckNo" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="BankAccountType" type="s:string" />
+    <wsdl:part name="SettlementDate" type="s:string" />
+    <wsdl:part name="ProcessDate" type="s:string" />
+    <wsdl:part name="DriveLicenseNo" type="s:string" />
+    <wsdl:part name="DriveLicenseState" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyDebitHttpPostOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHTransactionStatusHttpPostIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="TransID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHTransactionStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHVoidTransactionHttpPostIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="TransID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHVoidTransactionHttpPostOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsHttpPostIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="PostedDate" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyDebitRecurringHttpPostIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="NctID" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="CheckNo" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="BankAccountType" type="s:string" />
+    <wsdl:part name="SettlementDate" type="s:string" />
+    <wsdl:part name="DriveLicenseNo" type="s:string" />
+    <wsdl:part name="DriveLicenseState" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="PhoneNumber" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+    <wsdl:part name="RecurringID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyDebitRecurringHttpPostOut">
+    <wsdl:part name="Body" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyRecurringHttpPostIn">
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="RegKey" type="s:string" />
+    <wsdl:part name="NctID" type="s:string" />
+    <wsdl:part name="RefID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="CheckNo" type="s:string" />
+    <wsdl:part name="TransRoute" type="s:string" />
+    <wsdl:part name="BankAccountNo" type="s:string" />
+    <wsdl:part name="BankAccountType" type="s:string" />
+    <wsdl:part name="NextProcessDate" type="s:string" />
+    <wsdl:part name="NumOfDebits" type="s:string" />
+    <wsdl:part name="BillingCycle" type="s:string" />
+    <wsdl:part name="DriveLicenseNo" type="s:string" />
+    <wsdl:part name="DriveLicenseState" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="ZipCode" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="checkType" type="s:string" />
+    <wsdl:part name="fullAmountVerify" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ACHVerifyRecurringHttpPostOut">
+    <wsdl:part name="Body" element="tns:RecurringStatus" />
+  </wsdl:message>
+  <wsdl:portType name="CheckVerifySoap">
+    <wsdl:operation name="ACHCredit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Credit Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specified &lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;. Description is optional; field is populated from TC profile if not specified.</wsdl:documentation>
+      <wsdl:input message="tns:ACHCreditSoapIn" />
+      <wsdl:output message="tns:ACHCreditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHDebit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Debit Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, TransRoute, BankAccountNo,Name.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specified.&lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;.Description is optional; field is populated from TC profile if not specified.</wsdl:documentation>
+      <wsdl:input message="tns:ACHDebitSoapIn" />
+      <wsdl:output message="tns:ACHDebitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHRecurring">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Recurring Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name, NextProcessDate(mmddyy), NumOfDebits, BillingCycle.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate(mmddyy) is optional and assumed to be today's date if not specified.&lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;.</wsdl:documentation>
+      <wsdl:input message="tns:ACHRecurringSoapIn" />
+      <wsdl:output message="tns:ACHRecurringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerify">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This is to Verification/Guarantee Check and Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo.&lt;br&gt;DriveLicenseNo, DriveLicenseState, Name are required for Personal check and optional for Business Check.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specifiedAccountType is whether the account is checking or savings</wsdl:documentation>
+      <wsdl:input message="tns:ACHVerifySoapIn" />
+      <wsdl:output message="tns:ACHVerifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyCredit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Verification/Guarantee and Credit Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specified &lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;.</wsdl:documentation>
+      <wsdl:input message="tns:ACHVerifyCreditSoapIn" />
+      <wsdl:output message="tns:ACHVerifyCreditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyDebit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Verification/Guarantee and Debit Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specified.&lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;.</wsdl:documentation>
+      <wsdl:input message="tns:ACHVerifyDebitSoapIn" />
+      <wsdl:output message="tns:ACHVerifyDebitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHTransactionStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Transaction Status Required fields are:&lt;br&gt;MerchantID, RegKey, TransID&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:ACHTransactionStatusSoapIn" />
+      <wsdl:output message="tns:ACHTransactionStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVoidTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Void Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, TransID&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:ACHVoidTransactionSoapIn" />
+      <wsdl:output message="tns:ACHVoidTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For Getting ACH Transaction Details Required Fields are:&lt;br&gt;MerchantID, RegKey, RefID, PostedDate, Amount.&lt;br&gt;PostedDate should be in the form of either &lt;b&gt;MM/DD/YY&lt;/b&gt; or &lt;b&gt;MM/DD/YYYY&lt;/b&gt;. For example 01/01/09 or 01/01/2009</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionDetailsSoapIn" />
+      <wsdl:output message="tns:GetTransactionDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyDebitRecurring">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Recurring Verification/Guarantee and Debit Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specified.&lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;.</wsdl:documentation>
+      <wsdl:input message="tns:ACHVerifyDebitRecurringSoapIn" />
+      <wsdl:output message="tns:ACHVerifyDebitRecurringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyRecurring">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Recurring Transaction With Check Verification/Guarantee Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name, NextProcessDate(mmddyy), NumOfDebits, BillingCycle, fullAmountVerify.&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate(mmddyy) is optional and assumed to be today's date if not specified.&lt;br&gt;&lt;br&gt;Value For BankAccountType can be &lt;b&gt;Checking&lt;/b&gt; or &lt;b&gt;Saving&lt;/b&gt;.&lt;BR&gt;Value For fullAmountVerify is a boolean and can be &lt;b&gt;true&lt;/b&gt; or &lt;b&gt;false&lt;/b&gt;.&lt;BR&gt;If fullAmountVerify=&lt;b&gt;true&lt;/b&gt;, then verify/guarantee for the full amount of the recurring transaction.&lt;br&gt;If fullAmountVerify=&lt;b&gt;false&lt;/b&gt;, then verify/guarantee for only the recurrence amount.</wsdl:documentation>
+      <wsdl:input message="tns:ACHVerifyRecurringSoapIn" />
+      <wsdl:output message="tns:ACHVerifyRecurringSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CheckVerifyHttpGet">
+    <wsdl:operation name="ACHCredit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Credit Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specified &lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;. Description is optional; field is populated from TC profile if not specified.</wsdl:documentation>
+      <wsdl:input message="tns:ACHCreditHttpGetIn" />
+      <wsdl:output message="tns:ACHCreditHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHDebit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Debit Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, TransRoute, BankAccountNo,Name.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specified.&lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;.Description is optional; field is populated from TC profile if not specified.</wsdl:documentation>
+      <wsdl:input message="tns:ACHDebitHttpGetIn" />
+      <wsdl:output message="tns:ACHDebitHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHRecurring">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Recurring Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name, NextProcessDate(mmddyy), NumOfDebits, BillingCycle.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate(mmddyy) is optional and assumed to be today's date if not specified.&lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;.</wsdl:documentation>
+      <wsdl:input message="tns:ACHRecurringHttpGetIn" />
+      <wsdl:output message="tns:ACHRecurringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerify">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This is to Verification/Guarantee Check and Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo.&lt;br&gt;DriveLicenseNo, DriveLicenseState, Name are required for Personal check and optional for Business Check.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specifiedAccountType is whether the account is checking or savings</wsdl:documentation>
+      <wsdl:input message="tns:ACHVerifyHttpGetIn" />
+      <wsdl:output message="tns:ACHVerifyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyCredit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Verification/Guarantee and Credit Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specified &lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;.</wsdl:documentation>
+      <wsdl:input message="tns:ACHVerifyCreditHttpGetIn" />
+      <wsdl:output message="tns:ACHVerifyCreditHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyDebit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Verification/Guarantee and Debit Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specified.&lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;.</wsdl:documentation>
+      <wsdl:input message="tns:ACHVerifyDebitHttpGetIn" />
+      <wsdl:output message="tns:ACHVerifyDebitHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHTransactionStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Transaction Status Required fields are:&lt;br&gt;MerchantID, RegKey, TransID&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:ACHTransactionStatusHttpGetIn" />
+      <wsdl:output message="tns:ACHTransactionStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVoidTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Void Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, TransID&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:ACHVoidTransactionHttpGetIn" />
+      <wsdl:output message="tns:ACHVoidTransactionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For Getting ACH Transaction Details Required Fields are:&lt;br&gt;MerchantID, RegKey, RefID, PostedDate, Amount.&lt;br&gt;PostedDate should be in the form of either &lt;b&gt;MM/DD/YY&lt;/b&gt; or &lt;b&gt;MM/DD/YYYY&lt;/b&gt;. For example 01/01/09 or 01/01/2009</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionDetailsHttpGetIn" />
+      <wsdl:output message="tns:GetTransactionDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyDebitRecurring">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Recurring Verification/Guarantee and Debit Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specified.&lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;.</wsdl:documentation>
+      <wsdl:input message="tns:ACHVerifyDebitRecurringHttpGetIn" />
+      <wsdl:output message="tns:ACHVerifyDebitRecurringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyRecurring">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Recurring Transaction With Check Verification/Guarantee Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name, NextProcessDate(mmddyy), NumOfDebits, BillingCycle, fullAmountVerify.&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate(mmddyy) is optional and assumed to be today's date if not specified.&lt;br&gt;&lt;br&gt;Value For BankAccountType can be &lt;b&gt;Checking&lt;/b&gt; or &lt;b&gt;Saving&lt;/b&gt;.&lt;BR&gt;Value For fullAmountVerify is a boolean and can be &lt;b&gt;true&lt;/b&gt; or &lt;b&gt;false&lt;/b&gt;.&lt;BR&gt;If fullAmountVerify=&lt;b&gt;true&lt;/b&gt;, then verify/guarantee for the full amount of the recurring transaction.&lt;br&gt;If fullAmountVerify=&lt;b&gt;false&lt;/b&gt;, then verify/guarantee for only the recurrence amount.</wsdl:documentation>
+      <wsdl:input message="tns:ACHVerifyRecurringHttpGetIn" />
+      <wsdl:output message="tns:ACHVerifyRecurringHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CheckVerifyHttpPost">
+    <wsdl:operation name="ACHCredit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Credit Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specified &lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;. Description is optional; field is populated from TC profile if not specified.</wsdl:documentation>
+      <wsdl:input message="tns:ACHCreditHttpPostIn" />
+      <wsdl:output message="tns:ACHCreditHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHDebit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Debit Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, TransRoute, BankAccountNo,Name.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specified.&lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;.Description is optional; field is populated from TC profile if not specified.</wsdl:documentation>
+      <wsdl:input message="tns:ACHDebitHttpPostIn" />
+      <wsdl:output message="tns:ACHDebitHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHRecurring">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Recurring Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name, NextProcessDate(mmddyy), NumOfDebits, BillingCycle.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate(mmddyy) is optional and assumed to be today's date if not specified.&lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;.</wsdl:documentation>
+      <wsdl:input message="tns:ACHRecurringHttpPostIn" />
+      <wsdl:output message="tns:ACHRecurringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerify">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This is to Verification/Guarantee Check and Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo.&lt;br&gt;DriveLicenseNo, DriveLicenseState, Name are required for Personal check and optional for Business Check.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specifiedAccountType is whether the account is checking or savings</wsdl:documentation>
+      <wsdl:input message="tns:ACHVerifyHttpPostIn" />
+      <wsdl:output message="tns:ACHVerifyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyCredit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Verification/Guarantee and Credit Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specified &lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;.</wsdl:documentation>
+      <wsdl:input message="tns:ACHVerifyCreditHttpPostIn" />
+      <wsdl:output message="tns:ACHVerifyCreditHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyDebit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Verification/Guarantee and Debit Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specified.&lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;.</wsdl:documentation>
+      <wsdl:input message="tns:ACHVerifyDebitHttpPostIn" />
+      <wsdl:output message="tns:ACHVerifyDebitHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHTransactionStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Transaction Status Required fields are:&lt;br&gt;MerchantID, RegKey, TransID&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:ACHTransactionStatusHttpPostIn" />
+      <wsdl:output message="tns:ACHTransactionStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVoidTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Void Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, TransID&lt;br&gt;</wsdl:documentation>
+      <wsdl:input message="tns:ACHVoidTransactionHttpPostIn" />
+      <wsdl:output message="tns:ACHVoidTransactionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For Getting ACH Transaction Details Required Fields are:&lt;br&gt;MerchantID, RegKey, RefID, PostedDate, Amount.&lt;br&gt;PostedDate should be in the form of either &lt;b&gt;MM/DD/YY&lt;/b&gt; or &lt;b&gt;MM/DD/YYYY&lt;/b&gt;. For example 01/01/09 or 01/01/2009</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionDetailsHttpPostIn" />
+      <wsdl:output message="tns:GetTransactionDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyDebitRecurring">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Recurring Verification/Guarantee and Debit Transaction Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name.&lt;br&gt;&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate is optional and assumed to be today's date if not specified.&lt;br&gt;Value For BankAccountType would be &lt;b&gt;Checking/Saving&lt;/b&gt;.</wsdl:documentation>
+      <wsdl:input message="tns:ACHVerifyDebitRecurringHttpPostIn" />
+      <wsdl:output message="tns:ACHVerifyDebitRecurringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyRecurring">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For ACH Recurring Transaction With Check Verification/Guarantee Required fields are:&lt;br&gt;MerchantID, RegKey, Amount, CheckNo, TransRoute, BankAccountNo,DriveLicenseNo, DriveLicenseState, Name, NextProcessDate(mmddyy), NumOfDebits, BillingCycle, fullAmountVerify.&lt;br&gt;RefID is Optional and it's for user referance. SettlementDate(mmddyy) is optional and assumed to be today's date if not specified.&lt;br&gt;&lt;br&gt;Value For BankAccountType can be &lt;b&gt;Checking&lt;/b&gt; or &lt;b&gt;Saving&lt;/b&gt;.&lt;BR&gt;Value For fullAmountVerify is a boolean and can be &lt;b&gt;true&lt;/b&gt; or &lt;b&gt;false&lt;/b&gt;.&lt;BR&gt;If fullAmountVerify=&lt;b&gt;true&lt;/b&gt;, then verify/guarantee for the full amount of the recurring transaction.&lt;br&gt;If fullAmountVerify=&lt;b&gt;false&lt;/b&gt;, then verify/guarantee for only the recurrence amount.</wsdl:documentation>
+      <wsdl:input message="tns:ACHVerifyRecurringHttpPostIn" />
+      <wsdl:output message="tns:ACHVerifyRecurringHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CheckVerifySoap" type="tns:CheckVerifySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ACHCredit">
+      <soap:operation soapAction="http://www.paymentresource.com/webservices/ACHCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHDebit">
+      <soap:operation soapAction="http://www.paymentresource.com/webservices/ACHDebit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHRecurring">
+      <soap:operation soapAction="http://www.paymentresource.com/webservices/ACHRecurring" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerify">
+      <soap:operation soapAction="http://www.paymentresource.com/webservices/ACHVerify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyCredit">
+      <soap:operation soapAction="http://www.paymentresource.com/webservices/ACHVerifyCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyDebit">
+      <soap:operation soapAction="http://www.paymentresource.com/webservices/ACHVerifyDebit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHTransactionStatus">
+      <soap:operation soapAction="http://www.paymentresource.com/webservices/ACHTransactionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVoidTransaction">
+      <soap:operation soapAction="http://www.paymentresource.com/webservices/ACHVoidTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <soap:operation soapAction="http://www.paymentresource.com/webservices/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyDebitRecurring">
+      <soap:operation soapAction="http://www.paymentresource.com/webservices/ACHVerifyDebitRecurring" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyRecurring">
+      <soap:operation soapAction="http://www.paymentresource.com/webservices/ACHVerifyRecurring" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CheckVerifySoap12" type="tns:CheckVerifySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ACHCredit">
+      <soap12:operation soapAction="http://www.paymentresource.com/webservices/ACHCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHDebit">
+      <soap12:operation soapAction="http://www.paymentresource.com/webservices/ACHDebit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHRecurring">
+      <soap12:operation soapAction="http://www.paymentresource.com/webservices/ACHRecurring" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerify">
+      <soap12:operation soapAction="http://www.paymentresource.com/webservices/ACHVerify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyCredit">
+      <soap12:operation soapAction="http://www.paymentresource.com/webservices/ACHVerifyCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyDebit">
+      <soap12:operation soapAction="http://www.paymentresource.com/webservices/ACHVerifyDebit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHTransactionStatus">
+      <soap12:operation soapAction="http://www.paymentresource.com/webservices/ACHTransactionStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVoidTransaction">
+      <soap12:operation soapAction="http://www.paymentresource.com/webservices/ACHVoidTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <soap12:operation soapAction="http://www.paymentresource.com/webservices/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyDebitRecurring">
+      <soap12:operation soapAction="http://www.paymentresource.com/webservices/ACHVerifyDebitRecurring" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyRecurring">
+      <soap12:operation soapAction="http://www.paymentresource.com/webservices/ACHVerifyRecurring" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CheckVerifyHttpGet" type="tns:CheckVerifyHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ACHCredit">
+      <http:operation location="/ACHCredit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHDebit">
+      <http:operation location="/ACHDebit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHRecurring">
+      <http:operation location="/ACHRecurring" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerify">
+      <http:operation location="/ACHVerify" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyCredit">
+      <http:operation location="/ACHVerifyCredit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyDebit">
+      <http:operation location="/ACHVerifyDebit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHTransactionStatus">
+      <http:operation location="/ACHTransactionStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVoidTransaction">
+      <http:operation location="/ACHVoidTransaction" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <http:operation location="/GetTransactionDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyDebitRecurring">
+      <http:operation location="/ACHVerifyDebitRecurring" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyRecurring">
+      <http:operation location="/ACHVerifyRecurring" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CheckVerifyHttpPost" type="tns:CheckVerifyHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ACHCredit">
+      <http:operation location="/ACHCredit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHDebit">
+      <http:operation location="/ACHDebit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHRecurring">
+      <http:operation location="/ACHRecurring" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerify">
+      <http:operation location="/ACHVerify" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyCredit">
+      <http:operation location="/ACHVerifyCredit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyDebit">
+      <http:operation location="/ACHVerifyDebit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHTransactionStatus">
+      <http:operation location="/ACHTransactionStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVoidTransaction">
+      <http:operation location="/ACHVoidTransaction" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <http:operation location="/GetTransactionDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyDebitRecurring">
+      <http:operation location="/ACHVerifyDebitRecurring" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACHVerifyRecurring">
+      <http:operation location="/ACHVerifyRecurring" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CheckVerify">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;font size='4'&gt;&lt;a href='http://www.paymentresource.com'&gt;Payment Resources International&lt;/a&gt;&lt;/font&gt; provides this Check Verification Web Service for its customers.&lt;br&gt;In order to verify Check you will need to have a valid Merchant Account with us.For more information on this service click method below.</wsdl:documentation>
+    <wsdl:port name="CheckVerifySoap" binding="tns:CheckVerifySoap">
+      <soap:address location="https://webservices.primerchants.com/CheckVerifyWS/CheckVerifyWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CheckVerifySoap12" binding="tns:CheckVerifySoap12">
+      <soap12:address location="https://webservices.primerchants.com/CheckVerifyWS/CheckVerifyWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CheckVerifyHttpGet" binding="tns:CheckVerifyHttpGet">
+      <http:address location="https://webservices.primerchants.com/CheckVerifyWS/CheckVerifyWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CheckVerifyHttpPost" binding="tns:CheckVerifyHttpPost">
+      <http:address location="https://webservices.primerchants.com/CheckVerifyWS/CheckVerifyWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

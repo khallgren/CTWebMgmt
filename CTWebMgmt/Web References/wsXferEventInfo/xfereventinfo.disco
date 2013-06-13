@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://www.camptrak.com/xfereventinfo/xfereventinfo.asmx?wsdl" docRef="https://www.camptrak.com/xfereventinfo/xfereventinfo.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://www.camptrak.com/xfereventinfo/xfereventinfo.asmx" xmlns:q1="https://www.camptrak.com/" binding="q1:XferEventInfoSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://www.camptrak.com/xfereventinfo/xfereventinfo.asmx" xmlns:q2="https://www.camptrak.com/" binding="q2:XferEventInfoSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

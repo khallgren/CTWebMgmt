@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="https://webservices.primerchants.com/CheckVerifyWS/CheckVerifyWS.asmx?disco" filename="CheckVerifyWS.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://webservices.primerchants.com/CheckVerifyWS/CheckVerifyWS.asmx?wsdl" filename="CheckVerifyWS.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>
